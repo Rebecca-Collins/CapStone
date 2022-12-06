@@ -1,0 +1,21 @@
+@use "../../styles/colors" as *;
+
+.main-nav{
+height: 66px;
+display:flex;
+align-items: flex-end;
+gap: 20px;
+justify-content: space-evenly;
+
+    &__link{
+        text-decoration: none;
+        color: $black;
+    }
+}
+
+.logo{
+    width: 100px;
+    align-self: center;
+   object-fit: contain;
+   mix-blend-mode: color-burn;
+}

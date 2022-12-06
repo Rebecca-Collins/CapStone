@@ -1,0 +1,61 @@
+@use "../../styles/colors" as *;
+.main{
+    background-color: $black;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+
+    &__heading{
+        color: $white;
+        position: absolute;
+        top: 40px;
+        right: 152px;
+        z-index: 20;
+        width: 150px;
+        
+    }
+
+    &__img{
+        width:100px;
+        position: absolute;
+        right: 5rem;
+        bottom: 6.5625rem;
+    }
+
+    &__button{
+        background-color: rgb(25, 25, 173);
+        border: none;
+        width: 100px;
+        height:40px;
+        color: $white;
+        margin-left: 20px;
+        margin-bottom: 40px;
+    }
+
+    &__view-team{
+        width: 150px;
+        height: 40px;
+        // background-color: $white;
+        background-color: rgba(247, 247, 247, 0.423);
+        position: absolute;
+        bottom: 42px;
+        right: 18px;
+    }
+
+    &__view-team-text{
+        color: $white;
+        width: 109px;
+        position: absolute;
+        right: 42px;
+        bottom: 50px;
+        z-index: 50;
+    }
+
+    &__next-icon{
+        position: absolute;
+        bottom: 38px;
+        right: 18px;
+    }
+}
