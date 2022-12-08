@@ -18,7 +18,7 @@ function Login() {
         })
             .then((response) => {
                 sessionStorage.setItem("token", response.data.token);
-                navigate('/');
+                navigate('/homePage');
             })
             .catch((error) => {
                 console.log(error);

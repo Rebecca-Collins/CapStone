@@ -1,0 +1,84 @@
+.player-card {
+
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+max-width:600px;
+align-items: center;
+gap: 20px;
+padding-top:10px;
+background-color: black;
+
+
+  &__container {
+    // width: 145px;
+    // border: 3px solid yellow;
+    // -------------
+    display: flex;
+    // height: 280px;
+    width: 169px;
+    height: 169px;
+    background-color: #17141d;
+    border-radius: 10px;
+    box-shadow: -1rem 0 3rem #000;
+  /*   margin-left: -50px; */
+    // transition: 0.4s ease-out;
+    flex-direction: column;
+    align-items: center;
+
+    // position: relative;
+    // left: 0px;
+
+
+    // &:not(:first-child) {
+    //     margin-left: -50px;
+    // }
+
+
+    &:hover {
+      transform: scale(1.05); 
+    }
+      
+    //  &:hover ~ .card {
+    //     // position: relative;
+    //     left: 50px;
+    //     transition: 0.4s ease-out;
+    //   }
+   
+    }
+
+  &__heading{
+    color: white;
+  font-weight: 300;
+  // position: absolute;
+  left: 20px;
+  top: 15px;
+  }
+
+  &__image {
+    width: 75%;
+    object-fit:fill;
+    box-shadow: 2px 3px 5px rgb(173, 171, 171);
+    border-radius: 3%;
+  }
+
+  &__info {
+    // border: 3px solid pink;
+    color:white;
+  }
+}
+// .flip{
+//   background-color: grey;
+//   height: 100vh;
+// }
+
+// .flip-container{
+// height:158px;
+// width:158px;
+// perspective: 1000px;
+// }
+
+
+.player-card__image{
+  width: 100%;
+}

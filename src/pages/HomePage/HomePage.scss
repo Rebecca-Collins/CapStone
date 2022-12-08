@@ -6,9 +6,10 @@
     background-position: center;
     background-size: cover;
     height: 54vw;
+
+    &__hero-img{
+        width:100%;
+        object-fit: contain;
+    }
 }
 
-.home__hero-img{
-    width:100%;
-    object-fit: contain;
-}
