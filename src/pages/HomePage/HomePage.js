@@ -61,7 +61,6 @@ function HomePage() {
                 Log out
             </button>
    <div className="home">
-   <p>Welcome back, {user.first_name} {user.last_name}</p>
         <div>
         <div className="home__hero-container"></div>
         </div>

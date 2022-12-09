@@ -1,88 +1,60 @@
-// import { useEffect } from "react";
+import "./PlayerDetails.scss";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 
+function PlayerDetails() {
+  const [singlePlayer, setSinglePlayer] = useState([]);
+  const { playerId } = useParams();
 
-function PlayerDetails({players}) {
-
-// const [players, setPlayers] = useState([]);
-
-// useEffect(() => {
-//   getAllPlayers(playerId)
-// }, [playerId])
-
-// const indexOfLastRecord = currentPage * recordsPerPage;
-// const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
-
-// // Records to be displayed on the current page
-// const currentRecords = players.slice(indexOfFirstRecord, 
-//   indexOfLastRecord);
+  useEffect(() => {
+  
+    axios
+      .get(`http://localhost:2020/players/${playerId}`)
+      .then((response) => {
+        setSinglePlayer(response.data);
+      })
+      .catch((err) => {
+        console.log("Player does not exsits", err);
+      });
+  }, [playerId]);
 
   return (
-    <table className="table">
-      <thead>
-        <tr>
-          <th scope="col">ID</th>
-          <th scope="col">First Name</th>
-          <th scope="col">Last Name</th>
-        </tr>
-      </thead>
-      <tbody>
-        {players.map(player => (
-          <tr>
-            <td>{player.id}</td>
-            <td>{player.first_name}</td>
-            <td>{player.last_name}</td>
-            <td>{player.age}</td>
-            <td>{player.height}</td>
-            <td>{player.jersey}</td>
-            <td>{player.descrition}</td>
-            <td>{player.postion}</td>
-            
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  )
+    <section className="single-player">
+      <h2 className="single-player__heading">
+        {" "}
+        {singlePlayer.first_name} {singlePlayer.last_name}
+      </h2>
+      <div className="single-player__image-container">
+        <img
+          className="single-player__image"
+          src={singlePlayer.img}
+          alt={singlePlayer.first_name}
+        />
+      </div>
+      <div className="single-player__container">
+        <div>
+          <p className="single-player__content">Height: </p>
+          <p className="single-player__content">{singlePlayer.height}</p>
+        </div>
+
+        <div>
+          <p className="single-player__content">Jersey:</p>
+          <p className="single-player__content">{singlePlayer.jersey}</p>
+        </div>
+        <div>
+          <p className="single-player__content">Age:</p>
+          <p className="single-player__content"> {singlePlayer.age}</p>
+        </div>
+        <div>
+          <p className="single-player__content">Position:</p>
+          <p className="single-player__content">{singlePlayer.position}</p>
+        </div>
+      </div>
+      <p className="single-player__content">About:</p>
+      <p className="single-player__content">{singlePlayer.description}</p>
+    </section>
+  );
 }
 
-export default PlayerDetails
-
-
-// <div className="details">
-    //     <div className="details__container">
-    //       <h1>Hello</h1>
-    //       {players.map((player) =>{
-    //         return (
-              
-    //           <h1>Hello</h1>
-    //         )
-    //       })}
-          {/* {players.filter((player) => player.id !== playerId)
-          .map((player) => {
-            return(
-              <Link to={`/${player.id}`}
-              key={player.id}>
-                 <img src={player.img} alt={player.first_name}/>
-
-              </Link>
-             
-            )
-
-
-
-    //       })} */}
-    //      <h2>Image</h2>
-    //       <h1>
-    //         First name:
-    //         Last name:
-            
-    //       </h1>
-    //       <div>
-    //       <p>age</p>
-    //       <p>height</p>
-    //       <p>Position</p>
-    //       <p>Jersey</p>
-    //       <p>description</p>
-    //       </div>
-    //     </div>
-    // </div>
-  // )
+export default PlayerDetails;

@@ -1,70 +1,52 @@
-// import { useState, useEffect } from "react"
-// import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom"
+
+import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import axios from "axios"
 import "./PlayerCards.scss";
-import axios from "axios";
+import PlayerDetails from "../../pages/PlayerDetails/PlayerDetails";
 
 
-function PlayerCards({post, loading}) {
 
-  if (loading){
-    return <h2>Loading....</h2>
-  }
-  return <ul className="list-group">
-    {post.map(post => (
-      <li key={post.id} className="list-group">
-        {post.first_name}
+function PlayerCards() {
 
-      </li>
+  const [players, setPlayers] = useState([]);
+
+
+  useEffect(() => {
+
+    axios
+      .get('http://localhost:2020/players')
+      .then((response) => {
+        setPlayers(response.data);
+        console.log("TEST", response.data)
+       
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    
+ }, []);
+
+
+  return (
+    <div>
+  <div className="player-card">
+    {players.map(player => (
+      <div key={player.id} className="player-card__container">
+        <Link to={'/players/' + player.id}>
+        <img className="player-card__image" src={player.img} alt={player.first_name}/>
+        </Link>
+         <p className="player-card__info">{player.first_name} { player.last_name}</p> 
+        </div> 
+    
     ))}
-  </ul>
-// const [playerId, setPlayerId] = useState([]);
+     <PlayerDetails players={players}/> 
+     </div> 
+  </div>
 
-// useEffect(() => {
-//   axios
-//     .get('http://localhost:2020/players')
-//     .then((response) => {
-//       setPlayerId(response.data);
-      
-//     })
-//     .catch((error) => {
-//       console.log(error);
-//     });
-   
-// }, []);
+  )
 
-// useEffect(() => {
-//   setPlayerId(id);
-// }, [id]);
-
-
-
-// const [players, setPlayers] = useState([]);
-
-// useEffect(() => {
-//   getAllPlayers(playerId)
-// }, [playerId])
-// -----THIS IS WHAT WAS WORKING BEFORE
-//   return (
-
-//     <section className="player-card">
-      
-// {playerId.map((player) => {
-//   return(
-//     <div key={player.id}>
-//       <Link to={"/PlayerDetails"}>
-//     <div className="player-card__container">
-//       {/* <img className="player-card__image" src={player.img} alt={player.first_name}/> */}
-//     {/* <p>{player.first_name} {player.last_name}</p> */}
-//     </div>
-//     </Link>
-//     </div>
-//   )
-  
-   
-// })}
-//     </section>
-//   );
 }
 
-export default PlayerCards;
+
+export default PlayerCards

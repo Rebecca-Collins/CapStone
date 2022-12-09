@@ -1,8 +1,35 @@
+.single-player{
+    background-color: black;
 
-.details{
-    display:flex;
+
+    &__heading{
+        color:white;
+    }
+
+    &__image-container{
+        width: 200px;
+        margin: auto;
+    }
+
+    &__image{
+        width: 100%;
+        object-fit:fill;
+        box-shadow: 2px 3px 5px rgb(173, 171, 171);
+        border-radius: 3%;
+    }
+
+    &__container{
+        gap: 14px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: auto;
+        max-width: 146px;
+    
+    }
+
+    &__content{
+        color:white;
+    }
 }
 
-.details__container{
-    border: 2px solid red;
-}
