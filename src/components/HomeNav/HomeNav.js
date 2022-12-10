@@ -19,11 +19,12 @@ function HomeNav() {
 
 <nav className="navigation">
 
-  <h1><Link to=""></Link>Schedule</h1>
-  <h1><Link to=""></Link>Stats</h1>
-  <h1><Link to=""></Link>Try out</h1>
-  <h1><Link to=""></Link>Donate</h1>
-  <h1><Link to=""></Link>Sponsor</h1>
+  <Link className="navigation-link" to="">Schedule</Link>
+  <Link className="navigation-link" to="">Stats</Link>
+  <Link className="navigation-link" to="">Try out</Link>
+  <Link className="navigation-link" to="">Donate</Link>
+  <Link className="navigation-link" to="">Sponsor</Link>
+  
 </nav>
     </div>
 

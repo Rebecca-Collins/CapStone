@@ -1,9 +1,38 @@
 import "./Schedule.scss";
-
+import axios from "axios";
+import { useState, useEffect } from "react";
 function Schedule() {
+
+const [schedule, setSchedule] = useState([])
+
+
+useEffect(() => {
+
+
+  axios.get('http://localhost:2020/schedule')
+    .then((response) => {
+      setSchedule(response.data);
+      console.log("IS THIS WORKING", response.data);
+
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
+  }, []);
+
+
   return (
     <section className="schedule">
-    <table>
+      <div>
+        {schedule.map(data =>(
+          <div key={data.id}>
+            <div>{data.home_team}</div>
+
+          </div>
+        ))}
+      </div>
+    {/* <table>
   <tr>
     <th>Date</th>
     <th>Home Team</th>
@@ -47,7 +76,7 @@ function Schedule() {
     <td>Location Location Location Location Location Location Location</td>
   </tr>
   
-</table>
+</table> */}
 </section>
   )
 }

@@ -13,12 +13,10 @@ function PlayerCards() {
 
 
   useEffect(() => {
-
     axios
       .get('http://localhost:2020/players')
       .then((response) => {
         setPlayers(response.data);
-        console.log("TEST", response.data)
        
       })
       .catch((error) => {

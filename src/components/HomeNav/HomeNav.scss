@@ -1,140 +1,185 @@
-// @use "../../styles/colors" as *;
-// @use "../../styles/responsive" as *;
+@use "../../styles/colors" as *;
+@use "../../styles/responsive" as *;
 
-.home-nav{
-    height: 66px;
+.home-nav {
+  height: 66px;
 }
 
 
 .navigation {
-    background: rgba(0,0,0,.7);
-    position: absolute;
-      top:0;
-      bottom:0;
-      left:-100%;
-    overflow: hidden;
-    transition: left 0.3s;
-    width: 100%;
-    z-index: 100;
-    h1, h1 a{
-      color: #fff;
-      width: 100%;
-      text-align: center;
-      z-index: 101;
-    }
-    h1 a{
-      display:block;
-      font-size: 40px;
-      padding: 10px 20px;
-      margin-bottom: 20px;
-      text-decoration: none;
-      transition: all .3s ease;
-      &:hover {
-        background: rgba(255,255,255,.2);
-      }
-    }
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -100%;
+  // overflow: hidden;
+  transition: left 0.3s;
+  width: 100%;
+  z-index: 100;
+  @include tablet {
+    display:none;
   }
-  .home-nav__toggle {
-    display: block;
-    padding: 10px;
-    position: absolute;
-      top:0;
-      left:0;
+  h1,
+  h1 .navigation-link {
+    color: #fff;
+    width: 100%;
+    text-align: center;
     z-index: 101;
-  
-    .controller {
+    @include tablet {
+        display:none;
+      }
+  }
+  h1 .navigation-link {
+    display: block;
+    font-size: 40px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    @include tablet {
+        display:none;
+      }
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+      @include tablet {
+        display:none;
+      }
+    }
+  }
+  @include tablet {
+    display:none;
+  }
+}
+.home-nav__toggle {
+  display: block;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 101;
+  margin-top: 10px;
+  @include tablet {
+    display:none;
+  }
+
+  .controller {
+    display: inline-block;
+    height: 26px;
+    padding: 0px 0px;
+    cursor: pointer;
+    opacity: 0.97;
+    transition: all 0.3s ease;
+    @include tablet {
+        display:none;
+      }
+    span {
       display: inline-block;
-      height: 26px;
-      padding: 0px 0px;
-      cursor: pointer;
-      opacity: .97;
-      transition: all .3s ease;
-      span {
-        display:inline-block;
-        text-transform: uppercase;
-        line-height: 18px;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 18px;
-        font-weight: bold;
-        color: #fff;
-        margin-left: 0px;
-        width:0px;
-        overflow:hidden;
+      text-transform: uppercase;
+      line-height: 18px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      margin-left: 0px;
+      width: 0px;
+      // overflow: hidden;
+      @include tablet {
+        display:none;
       }
-  
-      .slide {
-        position: relative;
-          top:-2px;
-        width: 20px;
+    }
+
+    .slide {
+      position: relative;
+      top: -2px;
+      width: 20px;
+      height: 4px;
+      background: rgb(0, 0, 0);
+      display: inline-block;
+
+      &:before,
+      &:after {
+        display: block;
+        content: "";
         height: 4px;
-        background: rgb(0,0,0);
-        display:inline-block;
-  
-        &:before, &:after {
-          display: block;
-          content: "";
-          height: 4px;
-          width: 20px;
-          background: rgb(0,0,0);
-          position: absolute;
-          z-index: -1;
-          transition: all .1s .2s ease,transform .2s ease;
-        }  
-  
-        &:before {
-          top: 8px;
-        }
-  
+        width: 20px;
+        background: rgb(0, 0, 0);
+        position: absolute;
+        z-index: -1;
+        transition: all 0.1s 0.2s ease, transform 0.2s ease;
+        @include tablet {
+            display:none;
+          }
+      }
+
+      &:before {
+        top: 8px;
+        @include tablet {
+            display:none;
+          }
+      }
+
+      &:after {
+        top: -8px;
+        @include tablet {
+            display:none;
+          }
+      }
+    }
+  }
+  @include tablet {
+    display:none;
+  }
+}
+.nav-control {
+  position: absolute;
+  left: -9999px;
+  width: 100%;
+  clip: rect(0, 0, 0, 0);
+  @include tablet {
+    display:none;
+  }
+
+  &:checked ~ .navigation {
+    left: 0;
+    opacity: 1;
+    transition: left 0.3s, opacity 0.3s;
+    @include tablet {
+        display:none;
+      }
+
+    // ul li {
+    //   opacity: 1;
+    //   transform: translateX(0);
+    // }
+  }
+  &:checked ~ .home-nav__toggle {
+    .controller {
+      .slide {
+        transition: all 0.1s 0s ease;
+        background: transparent !important;
+        z-index: 101;
+        @include tablet {
+            display:none;
+          }
+        &:before,
         &:after {
-          top: -8px;
+          background: rgb(255, 255, 255);
+          transition: all 0.1s ease, transform 0.1s 0.2s ease;
+          top: 0;
+          width: 20px;
+        }
+
+        &:before {
+          transform: rotate3d(0, 0, 1, 45deg);
+        }
+
+        &:after {
+          transform: rotate3d(0, 0, 1, -45deg);
         }
       }
     }
   }
-  .nav-control {
-    position: absolute;
-      left:-9999px;
-    width: 100%;
-    clip: rect(0, 0, 0, 0);
-  
-    &:checked ~ .navigation {
-      left: 0;
-      opacity: 1;
-      transition: left 0.3s, opacity 0.3s;
-  
-      ul li {
-        opacity: 1;
-        transform: translateX( 0 );
-      }
-    }
-    &:checked ~ .home-nav__toggle {
-  
-      .controller {
-  
-          .slide {
-          transition: all .1s 0s ease;
-          background: transparent !important;
-          z-index: 101;
-  
-          &:before, &:after {
-            background: rgb(255,255,255);
-            transition: all .1s ease,transform .1s .2s ease;
-            top: 0;
-            width: 20px;
-          }
-  
-          &:before {
-            transform: rotate3d(0,0,1,45deg);
-          }
-  
-          &:after {
-            transform: rotate3d(0,0,1,-45deg);
-          }
-        }  
-      }
-    }
+  @include tablet {
+    display:none;
   }
-  
-  
-  
-   
+}

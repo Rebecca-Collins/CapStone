@@ -6,6 +6,8 @@ display:flex;
 align-items: flex-end;
 gap: 20px;
 justify-content: space-evenly;
+background-color: black;
+opacity: 50%;
 
     &__link{
         text-decoration: none;
@@ -17,5 +19,4 @@ justify-content: space-evenly;
     width: 100px;
     align-self: center;
    object-fit: contain;
-   mix-blend-mode: color-burn;
 }
