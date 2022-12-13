@@ -11,20 +11,23 @@ function HomeNav() {
 
 
 <input type="checkbox" id="nav-control" className="nav-control" />
-<label for="nav-control" className="home-nav__toggle">
+<label htmlFor="nav-control" className="home-nav__toggle">
   <div className="controller">
-    <div className="slide"></div> <span>menu</span>
+    <div className="slide"></div> 
   </div>
 </label>
 
 <nav className="navigation">
 
-  <Link className="navigation-link" to="">Schedule</Link>
-  <Link className="navigation-link" to="">Stats</Link>
-  <Link className="navigation-link" to="">Try out</Link>
-  <Link className="navigation-link" to="">Donate</Link>
-  <Link className="navigation-link" to="">Sponsor</Link>
-  
+  <h1><Link className="navigation-link" to="">Schedule</Link></h1>
+  <h1><Link className="navigation-link" to="">Stats</Link></h1>
+  <h1><Link className="navigation-link" to="">Try out</Link></h1>
+  <h1><Link className="navigation-link" to="">Donate</Link></h1>
+  <h1><Link className="navigation-link" to="">Sponsor</Link></h1>
+  <h1><Link className="navigation-link" to="/admin">Admin</Link></h1>
+
+
+
 </nav>
     </div>
 

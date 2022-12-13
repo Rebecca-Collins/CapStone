@@ -1,11 +1,12 @@
 import "../SignUp/SignUp.scss"
 import Input from "../../components/Input/Input";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function SignUp() {
 
+    const navigate = useNavigate();
     const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
 
@@ -23,8 +24,10 @@ function SignUp() {
           .post("http://localhost:2020/users/signup", newUser)
           .then(() => {
               setSuccess(true);
+              navigate("/login");
               setError("");
               event.target.reset();
+
           })
           .catch((error) => {
               setSuccess(false);

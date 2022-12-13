@@ -4,12 +4,35 @@ import PlayerCards from "../../components/PlayerCards/PlayerCards";
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import CommentSection from "../../components/CommentSection/CommentSection";
+import running from "../../assets/images/running.png"
 
-function HomePage() {
+import CommentList from "../../components/CommentList/CommentList";
 
-  const [user, setUser] = useState(null);
+function HomePage({players}) {
+
+  const [user, setUser] = useState([]);
   const [failedAuth, setFailedAuth] = useState(false);
 
+  const [comments, setComments] = useState([]);
+
+
+
+  const fetchComments = async () => {
+    const response = await axios.get("http://localhost:2020/comments");
+    setComments(response.data);
+    console.log("REBEECAS COMMENTS:", response.data);
+  };
+
+  useEffect(() => {
+    fetchComments();
+  }, [comments]);
+
+
+    
+
+
+//  ---- ADMIN AUTH ----
   useEffect(() => {
       const token = sessionStorage.getItem('token');
 
@@ -47,25 +70,56 @@ function HomePage() {
       );
   }
 
-  if (user === null) {
+  if (user === !user) {
       return (
           <main className="dashboard">
               <p>Loading...</p>
           </main>
       );
   }
+
+
+
+ 
+
+
+
+
+
+
   return (
     <section> 
         <HomeNav/>
         <button className="dashboard__logout" onClick={handleLogout}>
                 Log out
             </button>
-   <div className="home">
+            <div className="home">
+            <img className="home__image" src={running} alt={running}/>
+            </div>
+        
         <div>
-        <div className="home__hero-container"></div>
+            <h1 className="home__heading">Dominating the Competition: The Women's Soccer Team</h1>
         </div>
-    </div>
-    <PlayerCards/>
+  {/* <div></div>
+            <div><h1>Unbeatable on the Field: The Women's Soccer Team</h1></div>
+            <div></div>
+            <div> <h1>Champions in the Making: The Women's Soccer Team</h1></div> */}
+    
+
+    <PlayerCards players={players}/> 
+
+ <CommentSection fetchComments={fetchComments}/>
+ 
+ <CommentList comments={comments}/>
+ 
+  
+   
+  
+    <footer>
+        <div>
+           
+        </div>
+    </footer>
     </section>
   )
 }

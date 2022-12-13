@@ -41,7 +41,7 @@ function Login() {
         {error && <div className="login__message">Failed to login</div>}
     </form>
     <p>
-        Need an account? <Link to="/signup">Sign up</Link>
+        Need an account? <Link className="login__link" to="/signup">Sign up</Link>
     </p>
 </main>
   )

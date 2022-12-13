@@ -3,27 +3,37 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
-function PlayerDetails() {
-  const [singlePlayer, setSinglePlayer] = useState([]);
+function PlayerDetails({ players }) {
+
   const { playerId } = useParams();
 
+  const [singlePlayer, setSinglePlayer] = useState({
+    first_name: "",
+    last_name: "",
+    img: "",
+    height: "",
+    jersey: "",
+    age: "",
+    position: "",
+    description: "",
+  });
+
   useEffect(() => {
-  
     axios
       .get(`http://localhost:2020/players/${playerId}`)
       .then((response) => {
         setSinglePlayer(response.data);
       })
       .catch((err) => {
-        console.log("Player does not exsits", err);
+        console.log("Player does not exists", err);
       });
-  }, [playerId]);
+  }, [players, playerId]);
 
   return (
     <section className="single-player">
       <h2 className="single-player__heading">
-        {" "}
-        {singlePlayer.first_name} {singlePlayer.last_name}
+
+       {singlePlayer.first_name}<br></br> <span className="single-player__last-name">{singlePlayer.last_name}</span>
       </h2>
       <div className="single-player__image-container">
         <img
@@ -34,25 +44,21 @@ function PlayerDetails() {
       </div>
       <div className="single-player__container">
         <div>
-          <p className="single-player__content">Height: </p>
-          <p className="single-player__content">{singlePlayer.height}</p>
+          <p className="single-player__content"><span className="single-player__last-name" >Height:</span>{" "} {singlePlayer.height}</p>
         </div>
 
         <div>
-          <p className="single-player__content">Jersey:</p>
-          <p className="single-player__content">{singlePlayer.jersey}</p>
+          <p className="single-player__content"><span className="single-player__last-name">Jersey:</span>{" "}{singlePlayer.jersey}</p>
         </div>
         <div>
-          <p className="single-player__content">Age:</p>
-          <p className="single-player__content"> {singlePlayer.age}</p>
+          <p className="single-player__content"><span className="single-player__last-name">Age:</span>{" "}{singlePlayer.age}</p>
         </div>
         <div>
-          <p className="single-player__content">Position:</p>
-          <p className="single-player__content">{singlePlayer.position}</p>
+          <p className="single-player__content"><span className="single-player__last-name">Position:</span>{" "}{singlePlayer.position}</p>
         </div>
       </div>
-      <p className="single-player__content">About:</p>
-      <p className="single-player__content">{singlePlayer.description}</p>
+
+      <p className="single-player__description">{singlePlayer.description}</p>
     </section>
   );
 }

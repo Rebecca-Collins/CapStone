@@ -1,7 +1,8 @@
 @use "../../styles/mixins" as *;
+@use "../../styles/colors" as *;
 
 .login-page {
-    background-color: #f5f5f5;
+    background-color: $login-background;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -14,8 +15,8 @@
     display: flex;
     flex-direction: column;
     width: 22rem;
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+    box-shadow: 0 2px 16px $form-shadow;
+    background-color: $white;
     border-radius: 0.5rem;
     padding: 2rem 1.5rem;
     margin-bottom: 1rem;
@@ -26,6 +27,7 @@
 
     &__button {
         @include button-style;
+        border-radius: 10px;
         margin-top: 1rem;
         border-radius: 0.7rem;
         padding: 0.5rem;
@@ -33,13 +35,18 @@
         cursor: pointer;
         transition: background-color 0.15s;
         position: relative;
-        color: #fff;
-        background: #111;
+        color: $white;
+        background: $black;
     }
 
     &__message {
-        border-left: 5px solid #ddd;
+        border-left: 5px solid $login-message-background;
         padding: 0.75rem;
         margin-top: 2rem;
+    }
+
+    &__link{
+        text-decoration: none;
+        color: $yellow;
     }
 }

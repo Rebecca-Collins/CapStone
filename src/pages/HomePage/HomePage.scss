@@ -1,28 +1,126 @@
 @use "../../styles/mixins" as *;
+@use "../../styles//colors" as *;
 
 .dashboard__logout{
-   @include button-style;
-   position: absolute;
-   right: 13px;
-   top: 14px;
-   width: 63px;
-   height: 38px;
-   margin-left: 5px;
-}
+    margin-top: 1rem;
+    font-size: .6875rem;
+    cursor: pointer;
+    transition: background-color 0.15s;
+    position: absolute;
+    right: 1.375rem;
+    top: 0;
+    padding: .5rem .6875rem;
+    text-decoration: none;
+    background-color: $yellow;
+    color: $black;
+    font-weight: 600;
+    border: none;
 
-
-.home__hero-container{
-    width:100vw;
-    background-image: url("../../assets/images/sponsor2.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 54vw;
-
-    &__hero-img{
-        width:100%;
-        object-fit: contain;
+    &:before {
+      content: "";
+      background: linear-gradient(
+        45deg,
+       $white, $black, $yellow
+      );
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      background-size: 400%;
+      z-index: -1;
+      filter: blur(5px);
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      animation: glowing 20s linear infinite;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
     }
+
+    &:active {
+      color: $black;
+    }
+
+    &:active:after {
+      background: transparent;
+    }
+
+    &:hover:before {
+      opacity: 1;
+    }
+
+    &:after {
+      z-index: -1;
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: $black;
+      left: 0;
+      top: 0;
+  
+    }
+    @keyframes glowing {
+      0% { background-position: 0 0; }
+      50% { background-position: 400% 0; }
+      100% { background-position: 0 0; }
+  }
+}   
+//    position: absolute;
+//    right: 13px;
+//    top: 14px;
+//    width: 56px;
+//    height: 34px;
+//    font-size: 11px;
+//    margin-left: 5px;
+
+
+.home{
+
+  
+  width: 100%; 
+  height: 100%; 
+  background-image: url("../../assets/images/capstone-background.png");
+  background-repeat: repeat;
+  background-position: center;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+  background-color: $black;
+  z-index: 1; 
+
+// &__image{
+
+// }
+
+&__heading{
+  color: $yellow;
 }
+
+}
+
+
+
+// .home__hero-container{
+  
+//   width:100vw;
+//     // background-image: url("../../assets/images/bee.png");
+//     // background-repeat: no-repeat;
+//     // background-position: center;
+//     // background-size: cover;
+//     height: 54vw;
+
+   
+//     // background-color: $black;
+   
+//     color: $white;
+// }
+
+// .home__hero-container{
+  
+//     // &__hero-img{
+//     //     width:100%;
+//     //     object-fit: contain;
+
+//     // }
+// }
 
 

@@ -1,4 +1,7 @@
 @use "../../styles/colors" as *;
+@use "../../styles/responsive" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/fonts" as *;
 
 .main-nav{
 height: 66px;
@@ -6,7 +9,7 @@ display:flex;
 align-items: flex-end;
 gap: 20px;
 justify-content: space-evenly;
-background-color: black;
+background-color: $black;
 opacity: 50%;
 
     &__link{
