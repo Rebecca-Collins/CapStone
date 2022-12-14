@@ -7,7 +7,7 @@ import PlayerDetails from './pages/PlayerDetails/PlayerDetails';
 import Schedule from "./pages/Schedule/Schedule";
 import Tryouts from "./pages/Tryouts/Tryouts";
 import Admin from "./pages/Admin/Admin";
-import Delete from "./pages/Delete/Delete";
+// import Delete from "./pages/Delete/Delete";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from 'axios';
 import { useState, useEffect } from 'react';
@@ -46,7 +46,7 @@ useEffect(() => {
     <Route path="/schedule" element={<Schedule/>}/>
     <Route path="/tryouts" element={<Tryouts/>}/>
     <Route path="/admin" element={<Admin players={players}/>}/> 
-    <Route path="/delete/:playerId" element={<Delete/>}/>
+    {/* <Route path="/delete/:playerId" element={<Delete/>}/> */}
     
    </Routes>
    </BrowserRouter>

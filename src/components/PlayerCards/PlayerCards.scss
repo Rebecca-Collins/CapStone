@@ -3,135 +3,49 @@
 @use "../../styles/mixins" as *;
 @use "../../styles/fonts" as *;
 
-// .player-card {
-
-// display: flex;
-// justify-content: center;
-// flex-wrap: wrap;
-// // max-width:600px;
-// align-items: center;
-// gap: 20px;
-// padding-top:10px;
-// background-color: $black;
-
-// &__container{
-//   width: 18rem;
-// //  width: 200px;
-// //  max-width:215px;
-// //  height: 150px;
-// //  max-height:150px;
-// }
-
-//   // &__container {
-//   //   display: flex;
-//   //   width: 169px;
-//   //   height: 169px;
-//   //   border-radius: 10px;
-//   //   box-shadow: -1rem 0 3rem #000;
-//   //   flex-direction: column;
-//   //   align-items: center;
-   
-//   //   }
-
-//   // &__heading{
-//   //   color: white;
-//   // font-weight: 300;
-//   // }
-
-//   &__image {
-//     width: 45%;
-//     aspect-ratio: 3/2;
-//     // max-width: 6.875rem;
-//     // min-width: 6.875rem;
-//     // min-height: 4.1875rem;
-//     // max-height: 4.1875rem;
-//     object-fit: contain;
-//     // width: 100%;
-//     // object-fit:fill;
-//     box-shadow: 2px 3px 5px rgb(173, 171, 171);
-//     border-radius: 3%;
-
-//   }
-
-//   &__info {
-//     color:white;
-//   }
-// }
 .player-card{
-  display: flex;
   background-image: url("../../assets/images/capstone-background.png");
   background-repeat: repeat;
   background-position: center;
   background-size: contain;
-  width: 100%;
   height: 100%;
-  background-color: $black;
-  
-
 
   &__file {
-
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  // flex-wrap: wrap;
-  // max-width:600px;
-  // align-items: center;
-  gap: 20px;
-  padding-top:10px;
-  }
-  
-  &__container{
     display: flex;
     justify-content: center;
-    // width: 18rem;
-  //  width: 200px;
-  //  max-width:215px;
-  //  height: 150px;
-  //  max-height:150px;
+    flex-wrap: wrap;
+    max-width: 1326px;
+    margin: auto;
+    gap: -4px;
+    padding-top: 10px;
+  }
+
+  &__container{
+    display:flex;
+      justify-content: center;
+   width: 220px;
   }
   
-    // &__container {
-    //   display: flex;
-    //   width: 169px;
-    //   height: 169px;
-    //   border-radius: 10px;
-    //   box-shadow: -1rem 0 3rem #000;
-    //   flex-direction: column;
-    //   align-items: center;
-     
-    //   }
-  
-    // &__heading{
-    //   color: white;
-    // font-weight: 300;
-    // }
-  
     &__image {
-      width: 45%;
+      width: 80%;
       aspect-ratio: 3/2;
-      // max-width: 6.875rem;
-      // min-width: 6.875rem;
-      // min-height: 4.1875rem;
-      // max-height: 4.1875rem;
       object-fit: contain;
-      // width: 100%;
-      // object-fit:fill;
       box-shadow: 0px 1px 5px rgb(173, 171, 171);
       border-radius: 3%;
   
     }
   
     &__info {
-      color: $white;
-      display:flex;
-      justify-content: center;
+      color: $black;
+      margin: 5px 0 16px;
+      display: flex;
+    justify-content: center;
     }
-
 
     &__color{
       color: $yellow;
-      margin-left: 8px;
+      font-weight: 700;
+      margin-left: 5px;
     }
   }
 

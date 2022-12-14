@@ -1,17 +1,15 @@
-// import MainNav from "../../components/Main-Nav/MainNav"
 import { Link } from "react-router-dom";
-import player from "../../assets/images/player2.png";
-// import logo from "../../assets/logo/logo.png";
+import player from "../../assets/images/player.png";
 import LoginButton from "../../components/LoginButton/LoginButton";
-import bee from "../../assets/images/bee.png"
-// import MainLinks from "../../components/MainLinks/MainLinks"
+
+
 import "./Main.scss";
 
 function Main() {
   return (
     <div className="main__background">
      
-      <img className="main__image-icon" src={bee} alt={"A player on the team"}/>
+      <img className="main__image-icon" src={player} alt={"A player on the team"}/>
       <div className="main">
         <div className="main__container">
           <LoginButton />
@@ -19,7 +17,6 @@ function Main() {
           <h2 className="main__title">
             Unleashing the <span className="main__span">power</span> of female athletes
           </h2>
-          <img className="main__img" src={player} alt={player} />
           <div className="main__link-container">
             <div className="main-links-container">
               <Link to="/signup" className="main__link">

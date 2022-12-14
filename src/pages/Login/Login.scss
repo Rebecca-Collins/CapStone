@@ -1,5 +1,6 @@
 @use "../../styles/mixins" as *;
 @use "../../styles/colors" as *;
+@use "../../styles/responsive" as *;
 
 .login-page {
     background-color: $login-background;

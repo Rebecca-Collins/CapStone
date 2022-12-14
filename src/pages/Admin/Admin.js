@@ -1,72 +1,28 @@
-
 import axios from "axios";
 import React, { useState } from "react";
-import { useEffect} from "react";
-import Delete from "../Delete/Delete";
-import { Link } from "react-router-dom"
+import { useEffect } from "react";
 import "./Admin.scss";
-
-import deleteicon from "../../assets/icons/delete.svg"
-
-
+import deleteicon from "../../assets/icons/delete.svg";
 
 function Admin({ players }) {
-
-  const [clickDelete, setClickDelete] = useState(false);
-  const [success, setSuccess] = useState("");
-  const [error, setError] = useState("");
- const [playerToDelete, setPlayerToDelete] = useState("");
-
-  const handleDelete = (event) => {
+  //  --- DELETE PLAYER -----
+  const [deletedPlayers, setDeletedPlayers] = useState([]);
+  const handleDelete = (player) => {
     axios
-      .delete('http://localhost:2020/players/' + players.id )
+      .delete("http://localhost:2020/players/" + player.id)
       .then((response) => {
-        console.log("check for this:", response)
-        setSuccess("The player was deleted successfully!");
-        axios.get("http://localhost:2020/inventories").then((response) => {
-          setPlayerToDelete(response.data);
-         
-        });
+        console.log("check for this:", response);
+        const updatedDeletedPlayers = [...deletedPlayers, player.id];
+        setDeletedPlayers(updatedDeletedPlayers);
       })
       .catch((error) => {
         console.log(error);
-        setError("Something Went Wrong! Please Try Again.");
       });
   };
-
-  const handleClick = (playerToDelete) => {
-    setClickDelete(true);
-    
-    setPlayerToDelete(playerToDelete);
-};
-  
-  
- 
-  // --- Delete Player  the code below had some functionality--- 
-// const [clickDelete, setClickDelete] = useState(false);
-// const [playerToDelete, setPlayerToDelete] = useState("");
-
-// const handleClick = (players) => {
-//   setClickDelete(true);
-//   setPlayerToDelete(players.id)
-
-// };
-
-
-
 
   //  ---- ADMIN AUTH
   const [admin, setAdmin] = useState(false);
   const [failedAuth, setFailedAuth] = useState(false);
-
-  const handleLogin = (event) => {
-    const email = event.target.email.value;
-    const password = event.target.password.value;
-
-    if (email === "admin" && password === "password") {
-      setAdmin(true);
-    }
-  };
 
   useEffect(() => {
     const token = sessionStorage.getItem("token");
@@ -74,7 +30,6 @@ function Admin({ players }) {
     if (!token) {
       return setFailedAuth(true);
     }
-    setAdmin(admin);
 
     axios
       .get("http://localhost:2020/users/current", {
@@ -84,10 +39,9 @@ function Admin({ players }) {
       })
       .then((response) => {
         setAdmin(response.data.admin);
-        // If the user is an admin, the response will contain the "isAdmin" property set to true
-        if (response.data.admin) {
-          
-        } else {
+
+        console.log(response.data);
+        if (!response.data.admin) {
           console.log("User is not an admin");
         }
       })
@@ -95,122 +49,61 @@ function Admin({ players }) {
         console.log(error);
         setFailedAuth(true);
       });
-  }, [admin, failedAuth]);
-
+  }, []);
 
   return (
-    <div>
+    <div className="admin">
       {failedAuth && (
-        <div>
+        <div className="admin__text-message">
           There was an error authenticating your session. Please try logging in
           again.
         </div>
       )}
       {!admin && (
-        <div>
+        <div className="admin__not-admin">
           You are not an admin. Please login with an admin account to continue.
         </div>
       )}
       {admin && (
         <div>
-          <div className="admin__welcome">Welcome Admin! You are now logged in.</div>
-          {/* Other components or messages for the admin here */}
-        </div>
-      )}
-      {!admin && !failedAuth && (
-        <form onSubmit={handleLogin}>
-          <label>
-            Email:
-            <input type="text" name="email" />
-          </label>
-          <label>
-            Password:
-            <input type="password" name="password" />
-          </label>
-          <input type="submit" value="Submit" />
-        </form>
-      )}
-
-      <div>
-      {clickDelete === true ? (
-                <Delete
-                success={success}
-                error={error}
-                    playerToDelete={playerToDelete}
-                    handleDelete={handleDelete}
-                    
-                />
-            ) : null}
-            
-      </div>
-
-     {players.map((player) => (
-      
-      
-         <div className="admin-players" key={player.id}>
-
-             <div className="admin-players__container">
-          
-           <p className="player-card__info">
-             {player.first_name}
-             <span className="player-card__color"> {player.last_name}</span>
-            </p>
-       
-  <Link to={"/delete/players/" + player.id}>
-    <div onClick={() => {
-      handleClick(players.id)
-      console.log(players.id)
-    }}>
-  <img  className="admin-player__icon" src={deleteicon} alt={deleteicon}/>
-  </div>
-  </Link>
-   
- 
-           </div>
-      </div>
-         
-       ))}
-       </div>
-  
-     
-        
-      
-  )
-     }  
-{/* 
-<div>
-      {clickDelete === true ? (
-        <Delete
-          playerToDelete={playerToDelete}
-          handleDelete={handleDelete}
-          success={success}
-          error={error}
-          playersData={players}
-        />
-      ) : null}
-
-      {players.map((player) => (
-        <Link key={player.id} to={"/delete/" + player.id}>
-          <div
-            onClick={() => {
-              handleClick(player.id);
-            }}
-          >
-            <img
-              className="admin-player__icon"
-              src={deleteicon}
-              alt={deleteicon}
-            />
+          <div className="admin__welcome">
+            Welcome, <span className="admin__color">Admin!</span> You are now logged in! 
           </div>
-        </Link>
-      ))}
-    </div> */}
- 
+          <div className="admin__container">
+          {players
+            .filter((player) => !deletedPlayers.includes(player.id))
+            .map((player) => (
+              
+              <div className="admin__players" key={player.id}>
+
+                  <p className="admin__info">
+                    {player.first_name}
+                    <span className="admin__color">
+                      {player.last_name}
+                    </span>
+                  </p>
+
+                  <div className="admin__delete-container"
+                    onClick={() => {
+                      handleDelete(player);
+                      console.log(player);
+                    }}
+                  >
+                    <p className="admin__delete-text">Delete</p>
+                    <img
+                      className="admin__icon"
+                      src={deleteicon}
+                      alt={deleteicon}
+                    />
+                  </div>
+                </div>
+                
+            ))}  
+        </div>
+        </div>
+      )}  
+    </div>
+  );
+}
+
 export default Admin;
-
-
-
-
- 
-
-   
