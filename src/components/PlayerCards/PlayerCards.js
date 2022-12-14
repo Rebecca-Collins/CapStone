@@ -7,7 +7,6 @@ function PlayerCards({ players }) {
       <div className="player-card__file">
         {players.map((player) => (
           <div key={player.id}>
-            <div className="player-card__content">
             <Link
               className="player-card__container"
               to={"/players/" + player.id}
@@ -22,7 +21,6 @@ function PlayerCards({ players }) {
               {player.first_name} {"  "}{" "}
               <span className="player-card__color"> {player.last_name}</span>
             </p>
-          </div>
           </div>
         ))}
       </div>

@@ -2,7 +2,6 @@ import "./CommentSection.scss";
 import axios from "axios";
 import { useState } from "react";
 import "./CommentSection.scss";
-import sortDate from "../../Utility/sortDate";
 
 function CommentSection({ fetchComments }) {
   const [first_name, setFirst_name] = useState("");
@@ -15,48 +14,45 @@ function CommentSection({ fetchComments }) {
     axios
       .post("http://localhost:2020/comments/newcomment", requestBody)
       .then(async () => {
-        console.log("WHY??");
         try {
           fetchComments();
+          setFirst_name(""); 
+          setContent("");
+          document.getElementById("form-comment").reset();
         } catch (error) {
           return console.log(error);
         }
       });
   };
 
-  // fetchComments.sort((a, b) => {
-  //   // Compare the timestamps of the comments
-  //   if (a.timestamp < b.timestamp) {
-  //     return -1;
-  //   } else if (a.timestamp > b.timestamp) {
-  //     return 1;
-  //   } else {
-  //     return 0;
-  //   }
-  // });
-
   return (
-    <div className="AddProject">
-      <h3>Add Project</h3>
+    <div className="form-home">
+      <h3 className="form-home__heading">Add a comment</h3>
 
-      <form onSubmit={handleSubmit}>
-        <label>First Name:</label>
+      <form className="form-home__container" onSubmit={handleSubmit}>
+        <label className="form-home__name">First Name:</label>
         <input
+          className="form-home__name-input"
           type="text"
+          id="first_name"
           name="first_name"
           value={first_name}
           onChange={(e) => setFirst_name(e.target.value)}
         />
 
-        <label>Add a comment</label>
+        <label className="form-home__name">Add a comment</label>
         <textarea
+          className="form-home__textarea"
+          id="content"
           type="text"
           name="content"
           value={content}
           onChange={(e) => setContent(e.target.value)}
         />
 
-        <button type="submit">Submit</button>
+        <button className="form-home__button" type="submit">
+          Submit
+        </button>
       </form>
     </div>
   );

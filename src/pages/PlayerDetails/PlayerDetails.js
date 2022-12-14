@@ -4,7 +4,6 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 
 function PlayerDetails({ players }) {
-
   const { playerId } = useParams();
 
   const [singlePlayer, setSinglePlayer] = useState({
@@ -32,8 +31,11 @@ function PlayerDetails({ players }) {
   return (
     <section className="single-player">
       <h2 className="single-player__heading">
-
-       {singlePlayer.first_name}<br></br> <span className="single-player__last-name">{singlePlayer.last_name}</span>
+        {singlePlayer.first_name}
+        <br></br>{" "}
+        <span className="single-player__last-name">
+          {singlePlayer.last_name}
+        </span>
       </h2>
       <div className="single-player__image-container">
         <img
@@ -44,17 +46,26 @@ function PlayerDetails({ players }) {
       </div>
       <div className="single-player__container">
         <div>
-          <p className="single-player__content"><span className="single-player__last-name" >Height:</span>{" "} {singlePlayer.height}</p>
-        </div>
+          <p className="single-player__content">
+            <span className="single-player__last-name--color">Height: </span>{" "}
+            {singlePlayer.height}
+          </p>
 
-        <div>
-          <p className="single-player__content"><span className="single-player__last-name">Jersey:</span>{" "}{singlePlayer.jersey}</p>
+          <p className="single-player__content">
+            <span className="single-player__last-name--color">Jersey: </span>
+            {singlePlayer.jersey}
+          </p>
         </div>
         <div>
-          <p className="single-player__content"><span className="single-player__last-name">Age:</span>{" "}{singlePlayer.age}</p>
-        </div>
-        <div>
-          <p className="single-player__content"><span className="single-player__last-name">Position:</span>{" "}{singlePlayer.position}</p>
+          <p className="single-player__content">
+            <span className="single-player__last-name--color">Age: </span>
+            {singlePlayer.age}
+          </p>
+
+          <p className="single-player__content">
+            <span className="single-player__last-name--color">Position: </span>
+            {singlePlayer.position}
+          </p>
         </div>
       </div>
 

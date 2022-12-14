@@ -19,9 +19,9 @@ function HomeNav() {
 
 <nav className="navigation">
 
-  <h1><Link className="navigation-link" to="">Schedule</Link></h1>
+  <h1><Link className="navigation-link" to="/schedule">Schedule</Link></h1>
   <h1><Link className="navigation-link" to="">Stats</Link></h1>
-  <h1><Link className="navigation-link" to="">Try out</Link></h1>
+  <h1><Link className="navigation-link" to="/tryouts">Try out</Link></h1>
   <h1><Link className="navigation-link" to="">Donate</Link></h1>
   <h1><Link className="navigation-link" to="">Sponsor</Link></h1>
   <h1><Link className="navigation-link" to="/admin">Admin</Link></h1>

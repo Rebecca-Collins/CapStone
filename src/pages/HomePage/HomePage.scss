@@ -72,54 +72,41 @@
 //    font-size: 11px;
 //    margin-left: 5px;
 
-
 .home{
+  max-width:700px;
 
-  
-  // width: 100%; 
-  // height: 100%; 
-  // background-image: url("../../assets/images/capstone-background.png");
-  // background-repeat: repeat;
-  // background-position: center;
-  // background-size: contain;
-  // width: 100%;
-  // height: 100%;
-  // z-index: 1; 
+//   &__hero{
+//     width: 100%;
+//     height: 100vh;
+//     // width: 100vw;
+//     // height: 37vh;
+//     background-image: url("../../assets/images/team-banner.png");
+//     background-repeat:no-repeat;
+//     background-position: center;
+//     background-size: cover;
+//     position: relative;
 
-// &__image{
 
 // }
 
-&__heading{
-  color: $yellow;
+
+
+// &__heading{
+//  position: absolute;
+//  top: 120px;
+//  left: 43px;
+//   color: $white;
+//   width:300px;
+//   padding: 5px 0 5px 10px;
+//   font-size: 26px;
+// }
+
+&__span-home{
+  color:$yellow;
 }
 
 }
 
 
-
-// .home__hero-container{
-  
-//   width:100vw;
-//     // background-image: url("../../assets/images/bee.png");
-//     // background-repeat: no-repeat;
-//     // background-position: center;
-//     // background-size: cover;
-//     height: 54vw;
-
-   
-//     // background-color: $black;
-   
-//     color: $white;
-// }
-
-// .home__hero-container{
-  
-//     // &__hero-img{
-//     //     width:100%;
-//     //     object-fit: contain;
-
-//     // }
-// }
 
 

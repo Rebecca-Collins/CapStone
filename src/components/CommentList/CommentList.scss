@@ -1,20 +1,41 @@
-.comments{
-    width:280px;
-    display:flex;
-    flex-direction: column;
-    margin: auto;
-    gap: 20px;
+@use "../../styles/colors" as *;
+@use "../../styles/responsive" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/fonts" as *;
 
-    &__text{
-        border-bottom: 2px solid grey;
-        margin-bottom: 5px;
-    }
+.comments {
+  max-width: 29.4375rem;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  gap: 1.25rem;
 
-    &__content{
-        margin-bottom: 5px;
+  @include tablet {
+    max-width: 40.9375rem;
+  }
+
+  @include desktop {
+    max-width: 61.125rem;
+  }
+
+  &__text {
+    border-bottom: 1px solid grey;
+    margin: 0.75rem;
+
+    @include tablet {
+      font-size: 1.1875rem;
     }
+  }
+
+  &__name {
+    color: $yellow;
+  }
+
+  &__content {
+    margin-bottom: 0.3125rem;
+  }
+
+  &__time {
+    margin-bottom: 0.625rem;
+  }
 }
-
-
-
-

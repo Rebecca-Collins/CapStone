@@ -9,29 +9,30 @@
     cursor: pointer;
     transition: background-color 0.15s;
     position: absolute;
-    right: 29px;
-    padding: 5px 16px;
+    right: 1.8125rem;
+    padding: .3125rem 1rem;
     text-decoration: none;
-    background-color: $yellow;
-    color: $white;
+    border: 1px solid $yellow;
+    background-color:$login-button;
+    color: $yellow;
     font-weight: 600;
 
     &:before {
       content: "";
       background: linear-gradient(
         45deg,
-        $white, $black, $yellow
+        $yellow, $yellow, #2d30f2
       );
       position: absolute;
-      top: -2px;
-      left: -2px;
+      top: -0.125rem;
+      left: -0.125rem;
       background-size: 400%;
       z-index: -1;
-      filter: blur(5px);
-      width: calc(100% + 4px);
-      height: calc(100% + 4px);
+      filter: blur(.3125rem);
+      width: calc(100% + .25rem);
+      height: calc(100% + .25rem);
       animation: glowing 20s linear infinite;
-      opacity: 0;
+      opacity: 5%;
       transition: opacity 0.3s ease-in-out;
     }
 

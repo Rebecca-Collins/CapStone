@@ -12,7 +12,7 @@
     content: "";
     background: linear-gradient(
       45deg,
-    $black, grey
+    $yellow, $yellow, #2d30f2
     );
     position: absolute;
     top: -2px;
@@ -81,7 +81,7 @@
     #e171c8,
     #ff6663
   );
-  width: 32%;
+ 
   border-image-slice: 1;
   padding-bottom: 0.5rem;
   align-self: center;

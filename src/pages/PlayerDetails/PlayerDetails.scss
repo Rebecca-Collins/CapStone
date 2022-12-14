@@ -3,144 +3,142 @@
 @use "../../styles/mixins" as *;
 @use "../../styles/fonts" as *;
 
+.single-player {
+  background-color: $white;
+  position: relative;
 
-.single-player{
-    background-color: $black;
+  @include tablet {
+    display: flex;
+    margin: auto;
+    width: 48.1875rem;
+  }
 
-    @include tablet{
-        height:100vh;
-    }
-    
-    
-   
-    @include tablet{
-        display: flex;
-    }
-    &__heading {
-        color: $white;
-        width: 200px;
-        margin: auto;
-        padding: 10px 0 10px 0;
-        // font-size: 20px;  /* specify the same font size for all headings */
-        // line-height: 24px;  /* specify the same line height for all headings */
-        // text-align: center;  /* center the headings within their container */
-      
-        @include tablet {
-          margin: 0;
-          padding: 10px 0 10px 13px;
-          width: 300px;
-          position: absolute;
-          right: 224px;
-          top: 39px;
-          font-size: 41px;  /* specify the same font size for headings on tablets */
-          line-height: 49px;  /* specify the same line height for headings on tablets */
-        }
-      }
+  &__heading {
+    color: $black;
+    width: 12.5rem;
+    margin: auto;
+    padding: 0.625rem 0 0.625rem 0;
 
-    // &__heading{
-    //     color:$white;
-    //     width: 200px;
-    //     margin: auto;
-    //     padding: 10px 0 10px 0;
-
-    //     @include tablet{
-    //         margin: 0;
-    //         padding: 10px 0 10px 13px;
-    //         width:300px;
-    //         position: absolute;
-    //         right: 224px;
-    //         top: 39px;
-    //         font-size: 41px;
-    //         line-height: 49px;
-    //     }
-    // }
-
-    &__last-name{
-        @include tablet{
-            padding-left:10px;
-            border-bottom: 1px solid;
-            
-        }
-        
+    @include tablet {
+      margin: 0;
+      padding: 0.625rem 0 0.625rem 0.8125rem;
+      width: 18.75rem;
+      position: absolute;
+      right: 14rem;
+      top: 2.4375rem;
+      font-size: 2.4375rem;
+      line-height: 3.0625rem;
     }
 
-    &__image-container{
-        width: 200px;
-        margin: auto;
-        border-radius: 3%;
+    @include desktop {
+      right: 13rem;
+      top: 2.6875rem;
+      width: 25rem;
+      font-size: 3.0625rem;
+    }
+  }
 
-        @include tablet{
-            width: 222px;
-            margin: 0;
-            position: relative;
-    
-        }
+  &__last-name {
+    color: $yellow;
+    @include tablet {
+      padding-left: 0.625rem;
+      border-bottom: 1px solid $black;
+    }
+    @include desktop {
+      border: none;
+    }
+  }
+
+  &__image-container {
+    width: 12.5rem;
+    margin: auto;
+    border-radius: 3%;
+
+    @include tablet {
+      width: 13.875rem;
+      margin: 0;
+      position: relative;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    object-fit: fill;
+    box-shadow: 0px 0px 6px $box-shadow;
+    border-radius: 3%;
+
+    @include tablet {
+      position: absolute;
+      left: 1.5625rem;
+      top: 3.75rem;
+      width: 96%;
     }
 
-    &__image{
-        width: 100%;
-        object-fit:fill;
-        box-shadow: 0px 0px 6px $box-shadow;
-        border-radius: 3%;
+    @include desktop {
+      left: -10.875rem;
+      top: 3.75rem;
+      width: 142%;
+      box-shadow: none;
+    }
+  }
 
-        @include tablet{
-            position: absolute;
-            left: 37px;
-            top: 60px;
-            width: 82%;
-        }
+  &__container {
+    gap: 1.1875rem;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    width: 17.125rem;
+    padding: 0.3125rem 0 0.625rem 1.875rem;
+
+    @include tablet {
+      display: inline;
+      position: absolute;
+      right: 16.5625rem;
+      top: 10rem;
     }
 
-    &__container{
-        gap: 14px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        margin: auto;
-        width: 206px;
-        padding: 5px 0 10px;
+    @include desktop {
+      right: 17.3125rem;
+      top: 10.5rem;
+      font-size: 1.25rem;
+      width: 21.4375rem;
+    }
+  }
 
-        // @include tablet{
-        //     display:inline;
-        //     position: absolute;
-        //     right: 306px;
-        //     top: 173px;
-        // }
-    
+  &__content {
+    color: $black;
+  }
+
+  &__description {
+    color: $black;
+    width: 15.25rem;
+    margin: auto;
+    border-top: 1px solid $border-underline;
+    padding: 0.625rem 0 1.3125rem 0.625rem;
+
+    @include tablet {
+      border-left: 1px solid $border-underline;
+      border-top: none;
+      padding: 1.3125rem 0 1.3125rem 0.8125rem;
+      position: absolute;
+      right: 0;
+      top: 7.375rem;
+      height: 11.0625rem;
+      width: 13.75rem;
+      max-width: 18.75rem;
     }
 
-    &__content{
-        color: $white;
-        
+    @include desktop {
+      right: -2rem;
+      top: 7.375rem;
+      height: 12.3125rem;
+      width: 16.9375rem;
+      font-weight: 600;
     }
+  }
 
-    &__description{
-        color: $white;
-        width: 244px;
-        margin: auto;
-        border-top: 1px solid $border-underline;
-        padding:10px 0 21px 0;
-
-        @include tablet {
-            border-left: 1px solid $border-underline;
-            border-top: none;
-            padding: 44px 0 21px 16px;
-            position: absolute;
-            right: 4px;
-            top: 101px;
-            height: 172px;
-            width: 220px;
-            max-width: 300px;
-        }
-       
-    }
-
-    &__last-name{
-        color:$yellow;
-    }
+  &__last-name--color {
+    color: $yellow;
+    margin: 0 0.3125rem 0 0;
+  }
 }
-
-// span{
-    
-//     // line-height: 5px;
-// }

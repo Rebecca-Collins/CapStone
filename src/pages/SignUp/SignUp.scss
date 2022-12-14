@@ -21,6 +21,7 @@
 
   &__title {
     @include form-title;
+    width: 32%;
   }
 
   &__button {

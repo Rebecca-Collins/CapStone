@@ -9,7 +9,7 @@
   height: 100vh;
   overflow: hidden;
   position: relative;
-  background-color: $main-background;
+  background-color: $white;
 
   &__image-icon {
     display: none;
@@ -86,7 +86,7 @@
   }
 
   &__title {
-    color: $white;
+    color: $black;
     font-size: 1.25rem;
     position: absolute;
     top: 8.5rem;
@@ -173,11 +173,12 @@
     outline: none;
     cursor: pointer;
     z-index: 0;
-    color: $white;
+    color: $black;
+    font-weight:600;
 
     &:before {
       content: "";
-      background: linear-gradient(45deg, $white, $black, $white);
+      background: linear-gradient(45deg, $yellow,$black, $yellow);
       position: absolute;
       top: -0.125rem;
       left: -0.125rem;
@@ -187,7 +188,7 @@
       width: calc(100% + .25rem);
       height: calc(100% + .25rem);
       animation: glowing 20s linear infinite;
-      opacity: 8%;
+      opacity: 6%;
       transition: opacity 0.3s ease-in-out;
     }
 
@@ -211,6 +212,7 @@
       height: 100%;
       left: 0;
       top: 0; 
+      background-color: $white;
     }
     @keyframes glowing {
       0% {
