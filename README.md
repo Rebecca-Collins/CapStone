@@ -1,6 +1,7 @@
 Oceanside United
 
-Description
+Description:
+
 I created the official website for a local women's soccer team to help the team connect with the community and potentially find sponsors. This web application allows fans and sponsors to login or sign up and interact with the team.
 Features include:
 * Commenting system: Users can make comments that are displayed on the site and stored on the server.
@@ -18,7 +19,8 @@ To use the site, follow these steps:
 Clone the repo: by clicking < > Code, HTTPS
 In the terminal, run "npm install".
 
-Usage To use the website, follow these steps:
+Setup:
+
 * Clone the repository by clicking on the "Code" button and copying the HTTPS URL.
 * In the terminal, cd to the directory where you cloned the repository.
 * Install the dependencies by running the following command: npm install
