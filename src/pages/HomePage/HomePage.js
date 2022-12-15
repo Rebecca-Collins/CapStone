@@ -30,7 +30,6 @@ function HomePage({ players }) {
       return setFailedAuth(true);
     }
 
-    // Get the data from the API
     axios
       .get("http://localhost:2020/users/current", {
         headers: {
@@ -77,12 +76,10 @@ function HomePage({ players }) {
       <Link to="/" className="dashboard__logout" onClick={handleLogout}>
         Log out
       </Link>
-      <div className="home">
-        <div className="home__hero">
-          <h1 className="home__heading">
-            Oceanside <span className="home__span-home">United</span>
-          </h1>
-        </div>
+      <div>
+        <h1 className="home">
+          Oceanside <span className="home__span-home">United</span>
+        </h1>
       </div>
       <PlayerCards players={players} />
       <CommentSection fetchComments={fetchComments} />

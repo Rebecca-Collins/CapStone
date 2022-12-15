@@ -21,45 +21,42 @@
       width: 18.75rem;
       display: inline;
       animation: float 3s ease-in-out infinite;
-    
-    @keyframes float {
-      0% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
-      100% {
-        transform: translateY(0);
+
+      @keyframes float {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0);
+        }
       }
     }
-    
-    }
-    @include tablet{
-      top:4.625rem;
-      left:1.75rem;
-      width:17.4375rem;
+    @include tablet {
+      top: 4.625rem;
+      left: 1.75rem;
+      width: 17.4375rem;
     }
 
-    @include desktop{
+    @include desktop {
       width: 25.875rem;
       left: 5.625rem;
     }
-
-    
   }
 
-  &__signup-btn{
+  &__signup-btn {
     margin-top: 1rem;
     font-size: inherit;
     cursor: pointer;
     transition: background-color 0.15s;
     position: absolute;
     right: 11.8125rem;
-    padding: .3125rem 1rem;
+    padding: 0.3125rem 1rem;
     text-decoration: none;
     border: 1px solid $yellow;
-    background-color:$login-button;
+    background-color: $login-button;
     color: $yellow;
     font-weight: 600;
 
@@ -70,9 +67,9 @@
       left: -0.125rem;
       background-size: 400%;
       z-index: -1;
-      filter: blur(.3125rem);
-      width: calc(100% + .25rem);
-      height: calc(100% + .25rem);
+      filter: blur(0.3125rem);
+      width: calc(100% + 0.25rem);
+      height: calc(100% + 0.25rem);
       animation: glowing 20s linear infinite;
       opacity: 5%;
       transition: opacity 0.3s ease-in-out;
@@ -99,13 +96,18 @@
       background: $black;
       left: 0;
       top: 0;
-  
     }
     @keyframes glowing {
-      0% { background-position: 0 0; }
-      50% { background-position: 400% 0; }
-      100% { background-position: 0 0; }
-  }
+      0% {
+        background-position: 0 0;
+      }
+      50% {
+        background-position: 400% 0;
+      }
+      100% {
+        background-position: 0 0;
+      }
+    }
   }
 
   &__container {
@@ -123,7 +125,6 @@
     left: 0.791rem;
     top: 1.1892rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    
   }
 
   &__heading {
@@ -139,7 +140,7 @@
       font-size: 2.8125rem;
     }
 
-    @include desktop{
+    @include desktop {
       font-size: 3.875rem;
       top: 6.5rem;
       right: 10.5rem;
@@ -156,14 +157,14 @@
 
     @include tablet {
       width: 24.875rem;
-      font-size: 21px;
+      font-size: 1.3125rem;
       top: 8.5rem;
       right: 3.0625rem;
-      
+
       line-height: 2.4375rem;
     }
 
-    @include desktop{
+    @include desktop {
       width: 25.625rem;
       font-size: 1.4375rem;
       top: 12.5rem;
@@ -195,12 +196,11 @@
     @include tablet {
       right: 9rem;
       top: 16.875rem;
-      
     }
 
     @include desktop {
       right: 21rem;
-    top: 18.875rem;
+      top: 18.875rem;
     }
   }
 
@@ -211,7 +211,7 @@
     mix-blend-mode: color-burn;
     z-index: 99999;
     position: absolute;
-    top: .3125rem;
+    top: 0.3125rem;
     right: 10.6875rem;
   }
 
@@ -224,7 +224,7 @@
     width: 11.1875rem;
     height: 3.75rem;
     align-items: center;
-    margin-top: .9375rem;
+    margin-top: 0.9375rem;
   }
 
   &__link {
@@ -242,19 +242,19 @@
     cursor: pointer;
     z-index: 0;
     color: $black;
-    font-weight:600;
+    font-weight: 600;
 
     &:before {
       content: "";
-      background: linear-gradient(45deg, $yellow,$black, $yellow);
+      background: linear-gradient(45deg, $yellow, $black, $yellow);
       position: absolute;
       top: -0.125rem;
       left: -0.125rem;
       background-size: 400%;
       z-index: -1;
       filter: blur(5px);
-      width: calc(100% + .25rem);
-      height: calc(100% + .25rem);
+      width: calc(100% + 0.25rem);
+      height: calc(100% + 0.25rem);
       animation: glowing 20s linear infinite;
       opacity: 6%;
       transition: opacity 0.3s ease-in-out;
@@ -279,7 +279,7 @@
       width: 100%;
       height: 100%;
       left: 0;
-      top: 0; 
+      top: 0;
       background-color: $white;
     }
     @keyframes glowing {

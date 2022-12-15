@@ -4,7 +4,7 @@
 @use "../../styles/fonts" as *;
 
 .admin {
-  background-color: $border-underline;
+  background-color: $yellow;
   
   &__welcome {
     height: 4.125rem;
@@ -20,7 +20,7 @@
   }
 
   &__not-admin {
-    color: $not-admin;
+    color: $white;
     max-width: 25rem;
     height: 5.1875rem;
     margin: 0 1.3125rem;
@@ -31,21 +31,27 @@
     }
   }
 
+  &__not-admin-link{
+    color: $not-admin;
+    cursor: pointer;
+    margin-left: .9375rem;
+    
+  }
+
   &__container {
-    background-color: $black;
+    background-color: $login-message-background;
     padding-top: 0.9375rem;
   }
 
-  &__players {
+  &__players{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border: 1px solid $white;
+    border: 1px solid $black;
     max-width: 33.125rem;
     margin: auto;
     padding: 0.75rem;
     align-items: center;
-    border-radius: 0.5rem;
 
     @include tablet {
       padding: 0.875rem;
@@ -53,7 +59,7 @@
   }
 
   &__info {
-    color: $white;
+    color: $black;
     display: flex;
     gap: 0.625rem;
   }
@@ -62,12 +68,17 @@
     color: $yellow;
   }
 
+  &__color-admin{
+    color: $white;
+  }
+
   &__delete-container {
     display: flex;
     gap: 0.9375rem;
   }
 
   &__delete-text {
-    color: white;
+    color: $black;
+    font-size: .75rem;
   }
 }

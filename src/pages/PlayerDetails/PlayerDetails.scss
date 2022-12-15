@@ -15,8 +15,8 @@
 
   &__home-link {
     position: absolute;
-    top: .625rem;
-    left: 10px;
+    top: 0.625rem;
+    left: 0.625rem;
     cursor: pointer;
 
     @include desktop {
@@ -84,7 +84,7 @@
   &__image {
     width: 100%;
     object-fit: fill;
-    box-shadow: 0px 0px 6px $box-shadow;
+    box-shadow: 0rem 0rem 0.375rem $box-shadow;
     border-radius: 3%;
 
     @include tablet {
@@ -142,7 +142,6 @@
       padding: 1.3125rem 0 1.3125rem 0.8125rem;
       position: absolute;
       right: 39px;
-      // right: 0;
       top: 4.375rem;
       max-height: 16.0625rem;
       width: 13.75rem;

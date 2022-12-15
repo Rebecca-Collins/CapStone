@@ -40,8 +40,8 @@
   }
 
   &__time {
-    font-size: 13px;
+    font-size: .8125rem;
     margin-bottom: 0.625rem;
-    color: #777777;
+    color: $time;
   }
 }

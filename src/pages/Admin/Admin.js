@@ -3,8 +3,9 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import "./Admin.scss";
 import deleteicon from "../../assets/icons/delete.svg";
-
+import { Link } from "react-router-dom";
 function Admin({ players }) {
+  
   //  --- DELETE PLAYER -----
   const [deletedPlayers, setDeletedPlayers] = useState([]);
   const handleDelete = (player) => {
@@ -62,28 +63,29 @@ function Admin({ players }) {
       {!admin && (
         <div className="admin__not-admin">
           You are not an admin. Please login with an admin account to continue.
+          <Link className="admin__not-admin-link" to="/login">
+            Login
+          </Link>
         </div>
       )}
       {admin && (
         <div>
           <div className="admin__welcome">
-            Welcome, <span className="admin__color">Admin!</span> You are now logged in! 
+            Welcome, <span className="admin__admin-color">Admin!</span> You are
+            now logged in!
           </div>
           <div className="admin__container">
-          {players
-            .filter((player) => !deletedPlayers.includes(player.id))
-            .map((player) => (
-              
-              <div className="admin__players" key={player.id}>
-
+            {players
+              .filter((player) => !deletedPlayers.includes(player.id))
+              .map((player) => (
+                <div className="admin__players" key={player.id}>
                   <p className="admin__info">
                     {player.first_name}
-                    <span className="admin__color">
-                      {player.last_name}
-                    </span>
+                    <span className="admin__color">{player.last_name}</span>
                   </p>
 
-                  <div className="admin__delete-container"
+                  <div
+                    className="admin__delete-container"
                     onClick={() => {
                       handleDelete(player);
                       console.log(player);
@@ -97,11 +99,10 @@ function Admin({ players }) {
                     />
                   </div>
                 </div>
-                
-            ))}  
+              ))}
+          </div>
         </div>
-        </div>
-      )}  
+      )}
     </div>
   );
 }

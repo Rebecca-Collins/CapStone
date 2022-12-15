@@ -2,10 +2,9 @@
 @use "../../styles/responsive" as *;
 
 .home-nav {
-  height: 66px;
+  height: 4.125rem;
   background-color: $yellow;
 }
-
 
 .navigation {
   background: $burger-menu-background;
@@ -13,48 +12,43 @@
   top: 0;
   bottom: 0;
   left: -100%;
-  // overflow: hidden;
   transition: left 0.3s;
   width: 100%;
   z-index: 100;
   
-
   h1,
   h1 .navigation-link {
     color: white;
     width: 100%;
     text-align: center;
-    z-index: 101;
-   
+    z-index: 101; 
   }
   h1 .navigation-link {
     display: block;
-    font-size: 22px;
-    margin: 20px 20px 0 0;
+    font-size: 1.375rem;
+    margin: 1.25rem 1.25rem 0 0;
     text-decoration: none;
     transition: all 0.3s ease;
    
       &:hover {
-        background: $menu-hover;
-        
+        background: $menu-hover; 
     }
   }
 }
 
   .home-nav__toggle {
     display: block;
-    padding: 10px;
+    padding: .625rem;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 101;
-    margin-top: 10px;
+    margin-top: .625rem;
    
-  
     .controller {
       display: inline-block;
-      height: 26px;
-      padding: 0px 0px;
+      height: 1.625rem;
+      padding: 0rem 0rem;
       cursor: pointer;
       opacity: 0.97;
       transition: all 0.3s ease;
@@ -63,22 +57,19 @@
       span {
         display: inline-block;
         text-transform: uppercase;
-        line-height: 18px;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 18px;
-        font-weight: bold;
-        color: #fff;
-        margin-left: 0px;
-        width: 0px;
-        // overflow: hidden;
-      
+        line-height: 1.125rem;
+        font-size: 1.125rem;
+        font-weight: 700;
+        color: $white;
+        margin-left: 0rem;
+        width: 0rem;
       }
   
       .slide {
         position: relative;
-        top: -2px;
-        width: 20px;
-        height: 4px;
+        top: -0.125rem;
+        width: 1.25rem;
+        height: .25rem;
         background: $black;
         display: inline-block;
   
@@ -86,8 +77,8 @@
         &:after {
           display: block;
           content: "";
-          height: 4px;
-          width: 20px;
+          height: .25rem;
+          width: 1.25rem;
           background: $black;
           position: absolute;
           z-index: -1;
@@ -96,12 +87,12 @@
         }
   
         &:before {
-          top: 8px;
+          top: .5rem;
           
         }
   
         &:after {
-          top: -8px;
+          top: -0.5rem;
           
         }
       }
@@ -110,7 +101,7 @@
   }
   .nav-control {
     position: absolute;
-    left: -9999px;
+    left: -624.9375rem;
     width: 100%;
     clip: rect(0, 0, 0, 0);
    
@@ -133,7 +124,7 @@
             background: $close;
             transition: all 0.1s ease, transform 0.1s 0.2s ease;
             top: 0;
-            width: 20px;
+            width: 1.25rem;
           }
   
           &:before {
@@ -147,7 +138,4 @@
       }
     }
   }
-
-
-
-  
+ 

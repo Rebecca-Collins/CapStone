@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import closeIcon from "../../assets/icons/close.svg"
+import closeIcon from "../../assets/icons/close.svg";
 
 function PlayerDetails({ players }) {
   const { playerId } = useParams();
@@ -34,7 +34,11 @@ function PlayerDetails({ players }) {
     <section className="single-player">
       <div>
         <Link className="single-player__home-link" to="/homepage">
-          <img className="single-player__close-icon" src={closeIcon} alt={closeIcon}/> 
+          <img
+            className="single-player__close-icon"
+            src={closeIcon}
+            alt={closeIcon}
+          />
         </Link>
       </div>
       <h2 className="single-player__heading">

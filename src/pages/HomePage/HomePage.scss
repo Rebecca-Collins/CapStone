@@ -2,9 +2,8 @@
 @use "../../styles//colors" as *;
 
 
-
 .dashboard{
-  color: red;
+  color: $not-admin;
 }
 
 .dashboard__logout{
@@ -29,8 +28,8 @@
        $white, $black, $yellow
       );
       position: absolute;
-      top: -2px;
-      left: -2px;
+      top: -0.125rem;
+      left: -0.125rem;
       background-size: 400%;
       z-index: -1;
       filter: blur(5px);
@@ -70,11 +69,17 @@
       50% { background-position: 400% 0; }
       100% { background-position: 0 0; }
   }
-}   
+}  
 
-.home__span-home{
-  color:$yellow;
+.home{
+  padding: 1.25rem 0 1.25rem 4.25rem;
+
+  &__span-home{
+    color:$yellow;
+  }
 }
+
+
 
 
 

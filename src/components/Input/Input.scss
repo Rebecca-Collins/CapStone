@@ -1,3 +1,5 @@
+@use "../../styles/colors" as *;
+
 .field {
     display: flex;
     flex-direction: column;
@@ -8,7 +10,7 @@
 
     &__input {
         margin-bottom: 1rem;
-        border: 1px solid #ccc;
+        border: 1px solid $border-form;
         border-radius: 0.5rem;
         padding: 0.5rem;
         font-size: inherit;
