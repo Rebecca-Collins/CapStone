@@ -14,9 +14,10 @@ API backend with local host: https://github.com/Rebecca-Collins/CapStone-DB
 Technologies
 HTML, SCSS, JavaScript, Axios, 
 
-Usage
-To use the site, follow these steps:
+Setup:
+
 Clone the repo: by clicking < > Code, HTTPS
+cd into folder
 In the terminal, run "npm install".
 
 Setup:
@@ -27,6 +28,13 @@ Setup:
 * Set up the .env file by copying the .env.example file and entering the URL for your server.
 * Start the server by running the following command: npm start
 
-Lesson Learned
+Lesson Learned:
+
 One of the key challenges I faced during the development of this project was implementing user authentication and authorization for the admin. Initially, I implemented a system that worked, but was not efficient. After building out the site further, I decided to refactor the authentication process and pass down the necessary props to verify that the user is logged in and the admin. This improved the efficiency and reliability of the system.
 Another important lesson I learned is the importance of managing and manipulating data. This project gave me the opportunity to practice working with data and displaying it in a clean and clear manner for users. I am now more confident and comfortable with these skills. Overall, this project provided valuable learning experiences and helped me improve my skills in user authentication, data management, and other areas.
+
+
+Next Steps:
+- Add E-commerce that allows users to buy team merch
+- Add players
+- Set up forms to send
