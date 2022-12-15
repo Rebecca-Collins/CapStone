@@ -3,7 +3,7 @@
 
 .home-nav {
   height: 66px;
-  background-color: #E7E7E7;
+  background-color: $yellow;
 }
 
 
@@ -21,7 +21,7 @@
 
   h1,
   h1 .navigation-link {
-    color: $yellow;
+    color: white;
     width: 100%;
     text-align: center;
     z-index: 101;
@@ -125,7 +125,7 @@
       .controller {
         .slide {
           transition: all 0.1s 0s ease;
-          background: transparent !important;
+          background: trasparent !important;
           z-index: 101;
           
           &:before,
@@ -147,5 +147,7 @@
       }
     }
   }
+
+
 
   

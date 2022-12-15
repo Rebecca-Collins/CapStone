@@ -9,48 +9,57 @@
   justify-content: center;
   align-items: center;
   padding: 1rem;
+  position: relative;
 
-  &__heading {
-    color: $yellow;
+  &__home-link {
+    position: absolute;
+    left: .75rem;
 
+    @include desktop {
+      left: 1.5rem;
+      top: 1rem;
+    }
   }
 
   &__table {
     border-collapse: collapse;
-    width: 100%;
-    
-  }
-
-  &__table-row {
-    background-color:$black;
-   
-    &:hover {
-      background-color: #f5f5f5;
+    margin: 1.5625rem 0;
+    height: 25rem;
+    font-size: 0.8125rem;
+    box-shadow: 0 0 1.25rem $form-shadow;
+    @include tablet {
+      width: 39.4375rem;
+      height: 21.875rem;
     }
   }
 
-  &__td{
-    font-size: .75rem;
-    color: white;
-    border: 1px solid $border-underline;
-    padding: .5rem;
-  }
-
-  &__title{
-    font-weight:600;
-    font-size: .75rem;
+  &__table thead tr {
+    background-color: $yellow;
     color: $white;
-    padding: .5rem;
-    border: 1px solid $border-underline;
+    text-align: center;
+  }
 
-    @include tablet{
-        font-size: 1.25rem;
-    }
+  &__table th,
+  .schedule__table td {
+    padding: 0.3125rem 0.3125rem;
+    text-align: center;
+  }
+
+  &__table tbody tr {
+    border-bottom: 1px solid $login-message-background;
+  }
+
+  &__table tbody tr:nth-of-type(even) {
+    background-color: $login-background;
+  }
+
+  &__table tbody tr:last-of-type {
+    border-bottom: 2px solid $yellow;
+  }
+
+  &__table tbody tr:hover {
+    cursor: pointer;
+    background-color: $black;
+    color: $yellow;
   }
 }
-// th,
-// td {
-//   padding: 8px;
-// //   text-align: left;
-//   border-bottom: 1px solid $yellow;
-// }

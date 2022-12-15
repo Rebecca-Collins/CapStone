@@ -26,7 +26,6 @@ useEffect(() => {
     .get("http://localhost:2020/players")
     .then((response) => {
       setPlayers(response.data);
-      console.log("HELP", response.data);
     })
     .catch((error) => {
       console.log(error);

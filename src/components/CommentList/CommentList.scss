@@ -15,7 +15,7 @@
   }
 
   @include desktop {
-    max-width: 61.125rem;
+    max-width: 33.125rem;
   }
 
   &__text {
@@ -33,9 +33,15 @@
 
   &__content {
     margin-bottom: 0.3125rem;
+
+    @include tablet {
+      font-size: 1.125rem;
+    }
   }
 
   &__time {
+    font-size: 13px;
     margin-bottom: 0.625rem;
+    color: #777777;
   }
 }

@@ -9,7 +9,7 @@
     cursor: pointer;
     transition: background-color 0.15s;
     position: absolute;
-    right: 1.8125rem;
+    right: 3.8125rem;
     padding: .3125rem 1rem;
     text-decoration: none;
     border: 1px solid $yellow;
@@ -19,10 +19,6 @@
 
     &:before {
       content: "";
-      background: linear-gradient(
-        45deg,
-        $yellow, $yellow, #2d30f2
-      );
       position: absolute;
       top: -0.125rem;
       left: -0.125rem;

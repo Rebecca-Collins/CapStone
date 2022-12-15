@@ -9,7 +9,7 @@
   background-position: center;
   background-size: contain;
   height: 100%;
-
+ 
   &__file {
     display: flex;
     justify-content: center;
@@ -24,6 +24,8 @@
     display: flex;
     justify-content: center;
     width: 13.75rem;
+    cursor: pointer;
+    
 
     @include desktop{
       width: 12.75rem;
@@ -34,8 +36,13 @@
     width: 80%;
     aspect-ratio: 3/2;
     object-fit: contain;
-    box-shadow: 0px 1px 5px rgb(173, 171, 171);
+    box-shadow: 0px 1px 5px $box-shadow;
     border-radius: 3%;
+
+    transition: background-color 0.3s ease;
+     &:hover{
+      background-color: $playerCard-hover;
+     }
   }
 
   &__info {

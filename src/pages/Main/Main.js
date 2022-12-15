@@ -12,6 +12,7 @@ function Main() {
       <img className="main__image-icon" src={player} alt={"A player on the team"}/>
       <div className="main">
         <div className="main__container">
+          <Link to="/signup" className="main__signup-btn">Signup</Link>
           <LoginButton />
           <h1 className="main__heading">OCEANSIDE UNITED</h1>
           <h2 className="main__title">

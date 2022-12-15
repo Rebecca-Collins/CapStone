@@ -1,6 +1,12 @@
 @use "../../styles/mixins" as *;
 @use "../../styles//colors" as *;
 
+
+
+.dashboard{
+  color: red;
+}
+
 .dashboard__logout{
     margin-top: 1rem;
     font-size: .6875rem;
@@ -11,7 +17,7 @@
     top: 0;
     padding: .5rem .6875rem;
     text-decoration: none;
-    background-color: $yellow;
+    background-color: $black;
     color: $white;
     font-weight: 600;
     border: none;
@@ -40,6 +46,7 @@
     }
 
     &:active:after {
+      
       background: transparent;
     }
 
@@ -64,48 +71,11 @@
       100% { background-position: 0 0; }
   }
 }   
-//    position: absolute;
-//    right: 13px;
-//    top: 14px;
-//    width: 56px;
-//    height: 34px;
-//    font-size: 11px;
-//    margin-left: 5px;
 
-.home{
-  max-width:700px;
-
-//   &__hero{
-//     width: 100%;
-//     height: 100vh;
-//     // width: 100vw;
-//     // height: 37vh;
-//     background-image: url("../../assets/images/team-banner.png");
-//     background-repeat:no-repeat;
-//     background-position: center;
-//     background-size: cover;
-//     position: relative;
-
-
-// }
-
-
-
-// &__heading{
-//  position: absolute;
-//  top: 120px;
-//  left: 43px;
-//   color: $white;
-//   width:300px;
-//   padding: 5px 0 5px 10px;
-//   font-size: 26px;
-// }
-
-&__span-home{
+.home__span-home{
   color:$yellow;
 }
 
-}
 
 
 

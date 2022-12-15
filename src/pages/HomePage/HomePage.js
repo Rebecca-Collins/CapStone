@@ -74,9 +74,9 @@ function HomePage({ players }) {
   return (
     <section>
       <HomeNav />
-      <button className="dashboard__logout" onClick={handleLogout}>
+      <Link to="/" className="dashboard__logout" onClick={handleLogout}>
         Log out
-      </button>
+      </Link>
       <div className="home">
         <div className="home__hero">
           <h1 className="home__heading">

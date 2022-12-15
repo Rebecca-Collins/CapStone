@@ -13,6 +13,26 @@
     width: 48.1875rem;
   }
 
+  &__home-link {
+    position: absolute;
+    top: .625rem;
+    left: 10px;
+    cursor: pointer;
+
+    @include desktop {
+      left: -14.125rem;
+      top: 1.4375rem;
+    }
+  }
+
+  &__close-icon {
+    width: 1.6875rem;
+
+    @include desktop {
+      width: 3.125rem;
+    }
+  }
+
   &__heading {
     color: $black;
     width: 12.5rem;
@@ -121,9 +141,10 @@
       border-top: none;
       padding: 1.3125rem 0 1.3125rem 0.8125rem;
       position: absolute;
-      right: 0;
-      top: 7.375rem;
-      height: 11.0625rem;
+      right: 39px;
+      // right: 0;
+      top: 4.375rem;
+      max-height: 16.0625rem;
       width: 13.75rem;
       max-width: 18.75rem;
     }
