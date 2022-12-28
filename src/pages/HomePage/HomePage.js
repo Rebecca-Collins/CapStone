@@ -20,7 +20,7 @@ function HomePage({ players }) {
 
   useEffect(() => {
     fetchComments();
-  }, [comments]);
+  }, []);
 
   //  ---- ADMIN AUTH ----
   useEffect(() => {
@@ -84,6 +84,7 @@ function HomePage({ players }) {
       <PlayerCards players={players} />
       <CommentSection fetchComments={fetchComments} />
       <CommentList comments={comments} />
+    
     </section>
   );
 }

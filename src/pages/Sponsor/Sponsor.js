@@ -4,6 +4,7 @@ import closeIcon from "../../assets/icons/close.svg"
 import { Link } from "react-router-dom";
 
 function Sponsor() {
+
   return (
 <main className="sponsor-form">
   <Link className="sponsor-form__close" to="/homepage">

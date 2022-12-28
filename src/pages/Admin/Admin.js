@@ -1,25 +1,13 @@
 import axios from "axios";
-import React, { useState } from "react";
+import { useState } from "react";
 import { useEffect } from "react";
 import "./Admin.scss";
-import deleteicon from "../../assets/icons/delete.svg";
+import AddPlayer from "../../components/AddPlayer/AddPlayer";
+import DeletePlayer from "../../components/DeletePlayer/DeletePlayer";
 import { Link } from "react-router-dom";
+
+
 function Admin({ players }) {
-  
-  //  --- DELETE PLAYER -----
-  const [deletedPlayers, setDeletedPlayers] = useState([]);
-  const handleDelete = (player) => {
-    axios
-      .delete("http://localhost:2020/players/" + player.id)
-      .then((response) => {
-        console.log("check for this:", response);
-        const updatedDeletedPlayers = [...deletedPlayers, player.id];
-        setDeletedPlayers(updatedDeletedPlayers);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
 
   //  ---- ADMIN AUTH
   const [admin, setAdmin] = useState(false);
@@ -41,7 +29,6 @@ function Admin({ players }) {
       .then((response) => {
         setAdmin(response.data.admin);
 
-        console.log(response.data);
         if (!response.data.admin) {
           console.log("User is not an admin");
         }
@@ -74,32 +61,10 @@ function Admin({ players }) {
             Welcome, <span className="admin__admin-color">Admin!</span> You are
             now logged in!
           </div>
-          <div className="admin__container">
-            {players
-              .filter((player) => !deletedPlayers.includes(player.id))
-              .map((player) => (
-                <div className="admin__players" key={player.id}>
-                  <p className="admin__info">
-                    {player.first_name}
-                    <span className="admin__color">{player.last_name}</span>
-                  </p>
 
-                  <div
-                    className="admin__delete-container"
-                    onClick={() => {
-                      handleDelete(player);
-                      console.log(player);
-                    }}
-                  >
-                    <p className="admin__delete-text">Delete</p>
-                    <img
-                      className="admin__icon"
-                      src={deleteicon}
-                      alt={deleteicon}
-                    />
-                  </div>
-                </div>
-              ))}
+          <div className="admin__container">
+          <AddPlayer players={players} />
+          <DeletePlayer players={players}/>
           </div>
         </div>
       )}

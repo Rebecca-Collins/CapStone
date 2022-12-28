@@ -34,7 +34,7 @@
   }
 
   &__heading {
-    color: $black;
+    // color: $black;
     width: 12.5rem;
     margin: auto;
     padding: 0.625rem 0 0.625rem 0;
@@ -125,12 +125,12 @@
     }
   }
 
-  &__content {
-    color: $black;
-  }
+  // &__content {
+  //   // color: $black;
+  // }
 
   &__description {
-    color: $black;
+    // color: $black;
     width: 15.25rem;
     margin: auto;
     border-top: 1px solid $border-underline;

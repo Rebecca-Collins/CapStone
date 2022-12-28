@@ -1,0 +1,38 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/colors" as *;
+@use "../../styles/responsive" as *;
+
+.delete-player{
+    background-color: #333;
+    color: white;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    box-shadow: 0 5px 6px rgb(0 0 0 / 35%);
+    margin-bottom: 10px;
+    border-radius: 7.7rem;
+    margin-left: 20px;
+    // transition: all 0.3s ease;
+    // @include button-style;
+    // outline: none;
+    // border:none;
+    // margin-bottom: 1rem;
+   
+    // padding: 19px 28px;
+    // font-size: inherit;
+    // cursor: pointer;
+    // position: relative;
+    // color: #fff;
+    // background: #111;
+    // display: flex;
+    align-items: center;
+    display: flex;
+
+    &__player-icon{
+        width: 1.5rem;
+        margin-left: .5rem;
+    }
+}

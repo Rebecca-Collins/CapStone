@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import player from "../../assets/images/player.png";
 import LoginButton from "../../components/LoginButton/LoginButton";
 
+
 import "./Main.scss";
 
 function Main() {
@@ -17,7 +18,7 @@ function Main() {
           <Link to="/signup" className="main__signup-btn">
             Signup
           </Link>
-          <LoginButton />
+          <LoginButton/>
           <h1 className="main__heading">OCEANSIDE UNITED</h1>
           <h2 className="main__title">
             Unleashing the <span className="main__span">power</span> of female
@@ -26,7 +27,7 @@ function Main() {
           <div className="main__link-container">
             <div className="main-links-container">
               <Link to="/signup" className="main__link">
-                join the team!
+                join the team
               </Link>
             </div>
 
@@ -39,6 +40,7 @@ function Main() {
         </div>
       </div>
     </div>
+    
   );
 }
 

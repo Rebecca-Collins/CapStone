@@ -49,9 +49,9 @@
     border-bottom: 1px solid $login-message-background;
   }
 
-  &__table tbody tr:nth-of-type(even) {
-    background-color: $login-background;
-  }
+  // &__table tbody tr:nth-of-type(even) {
+  //   background-color: $login-background;
+  // }
 
   &__table tbody tr:last-of-type {
     border-bottom: 2px solid $yellow;

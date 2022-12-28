@@ -1,0 +1,50 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/colors" as *;
+@use "../../styles/responsive" as *;
+
+
+.add-player{
+    padding: 1rem;
+
+    &__button{
+        background-color: #333;
+        color: white;
+        font-family: 'Helvetica Neue', sans-serif;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 10px 29px;
+        box-shadow: 0 5px 6px rgb(0 0 0 / 35%);
+        border-radius: 7.7rem;
+        margin-left: 20px;
+        // @include button-style;
+        // margin-top: 1rem;
+        // border-radius: 0.7rem;
+        // padding: 10px 10px;
+        // font-size: inherit;
+        // cursor: pointer;
+        // transition: background-color 0.15s;
+        // position: relative;
+        // color: #fff;
+        // background: #111;
+        // outline: none;
+        // border:none;
+        // margin-bottom: 1rem;
+        // border-radius: 7.7rem;
+        // padding: 19px 28px;
+        // font-size: inherit;
+        // cursor: pointer;
+        // position: relative;
+        // color: #fff;
+        // background: #111;
+        // display: flex;
+        align-items: center;
+        display: flex;
+    }
+
+    &__icon{
+        width:1.5rem;
+        margin-left: .5rem;
+    }
+}

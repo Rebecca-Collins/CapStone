@@ -2,302 +2,179 @@
 @use "../../styles/responsive" as *;
 @use "../../styles/mixins" as *;
 @use "../../styles/fonts" as *;
-
-.main {
-  width: 100%;
-  float: left;
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-  background-color: $white;
-
-  &__image-icon {
-    display: none;
-    @include mobile {
-      position: absolute;
-      top: 2.125rem;
-      left: 1.9375rem;
-      z-index: 9999;
-      width: 18.75rem;
-      display: inline;
-      animation: float 3s ease-in-out infinite;
-
-      @keyframes float {
-        0% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-10px);
-        }
-        100% {
-          transform: translateY(0);
-        }
-      }
-    }
-    @include tablet {
-      top: 4.625rem;
-      left: 1.75rem;
-      width: 17.4375rem;
-    }
-
-    @include desktop {
-      width: 25.875rem;
-      left: 5.625rem;
-    }
-  }
-
-  &__signup-btn {
-    margin-top: 1rem;
-    font-size: inherit;
-    cursor: pointer;
-    transition: background-color 0.15s;
-    position: absolute;
-    right: 11.8125rem;
-    padding: 0.3125rem 1rem;
-    text-decoration: none;
-    border: 1px solid $yellow;
-    background-color: $login-button;
-    color: $yellow;
-    font-weight: 600;
-
-    &:before {
-      content: "";
-      position: absolute;
-      top: -0.125rem;
-      left: -0.125rem;
-      background-size: 400%;
-      z-index: -1;
-      filter: blur(0.3125rem);
-      width: calc(100% + 0.25rem);
-      height: calc(100% + 0.25rem);
-      animation: glowing 20s linear infinite;
-      opacity: 5%;
-      transition: opacity 0.3s ease-in-out;
-    }
-
-    &:active {
-      color: $black;
-    }
-
-    &:active:after {
-      background: transparent;
-    }
-
-    &:hover:before {
-      opacity: 1;
-    }
-
-    &:after {
-      z-index: -1;
-      content: "";
-      position: absolute;
+    
+    .main {
       width: 100%;
-      height: 100%;
-      background: $black;
-      left: 0;
-      top: 0;
-    }
-    @keyframes glowing {
-      0% {
-        background-position: 0 0;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    //   background-color: #1d0023;
+    
+      &__image-icon {
+        display: none;
+        @include mobile {
+          position: absolute;
+          top: 2.125rem;
+          left: 1.9375rem;
+          z-index: 9999;
+          width: 18.75rem;
+          display: inline;
+          animation: float 3s ease-in-out infinite;
+    
+          @keyframes float {
+            0% {
+              transform: translateY(0);
+            }
+            50% {
+              transform: translateY(-10px);
+            }
+            100% {
+              transform: translateY(0);
+            }
+          }
+        }
+        @include tablet {
+          top: 4.625rem;
+          left: 1.75rem;
+          width: 17.4375rem;
+        }
+    
+        @include desktop {
+          width: 25.875rem;
+          left: 5.625rem;
+        }
       }
-      50% {
-        background-position: 400% 0;
+    
+      &__signup-btn {
+        cursor: pointer;
+        position: absolute;
+        right: 11.8125rem;
+        text-decoration: none;
+        color: $yellow;
+        font-weight: 600;
+       
       }
-      100% {
-        background-position: 0 0;
+    
+      &__heading {
+        color: $yellow;
+        position: absolute;
+        top: 4.5rem;
+        right: 2.5rem;
+        font-size: 1.875rem;
+    
+        @include tablet {
+          top: 4.5rem;
+          right: 5.5rem;
+          font-size: 2.8125rem;
+        }
+    
+        @include desktop {
+          font-size: 3.875rem;
+          top: 6.5rem;
+          right: 10.5rem;
+        }
       }
-    }
-  }
-
-  &__container {
-    background-image: url("../../assets/images/capstone-background.png");
-    background-repeat: repeat;
-    background-position: center;
-    background-size: contain;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    position: relative;
-    margin: -0.875rem 0 0 -0.9375rem;
-    transform-style: preserve-3d;
-    overflow-x: hidden;
-    left: 0.791rem;
-    top: 1.1892rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  }
-
-  &__heading {
-    color: $yellow;
-    position: absolute;
-    top: 4.5rem;
-    right: 2.5rem;
-    font-size: 1.875rem;
-
-    @include tablet {
-      top: 4.5rem;
-      right: 5.5rem;
-      font-size: 2.8125rem;
-    }
-
-    @include desktop {
-      font-size: 3.875rem;
-      top: 6.5rem;
-      right: 10.5rem;
-    }
-  }
-
-  &__title {
-    color: $black;
-    font-size: 1.25rem;
-    position: absolute;
-    top: 8.5rem;
-    right: -0.0625rem;
-    width: 18.75rem;
-
-    @include tablet {
-      width: 24.875rem;
-      font-size: 1.3125rem;
-      top: 8.5rem;
-      right: 3.0625rem;
-
-      line-height: 2.4375rem;
-    }
-
-    @include desktop {
-      width: 25.625rem;
-      font-size: 1.4375rem;
-      top: 12.5rem;
-      right: 10.875rem;
-    }
-  }
-
-  &__img {
-    display: none;
-    @include tablet {
-      width: 6.25rem;
-      position: absolute;
-      right: 5rem;
-      bottom: 6.5625rem;
-    }
-  }
-
-  &__link-container {
-    position: absolute;
-    top: 13.875rem;
-    right: 3.6875rem;
-    display: flex;
-    flex-direction: column;
-    border: 2px solid $yellow;
-    width: 11.1875rem;
-    height: 3.75rem;
-    align-items: center;
-
-    @include tablet {
-      right: 9rem;
-      top: 16.875rem;
-    }
-
-    @include desktop {
-      right: 21rem;
-      top: 18.875rem;
-    }
-  }
-
-  &__logo {
-    width: 6.25rem;
-    align-self: center;
-    object-fit: contain;
-    mix-blend-mode: color-burn;
-    z-index: 99999;
-    position: absolute;
-    top: 0.3125rem;
-    right: 10.6875rem;
-  }
-
-  &__container-sponsor {
-    position: absolute;
-    top: 3.875rem;
-    display: flex;
-    flex-direction: column;
-    border: 2px solid $yellow;
-    width: 11.1875rem;
-    height: 3.75rem;
-    align-items: center;
-    margin-top: 0.9375rem;
-  }
-
-  &__link {
-    vertical-align: middle;
-    text-decoration: none;
-    text-transform: uppercase;
-    width: 8.375rem;
-    height: 3.125rem;
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
-    align-items: center;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    z-index: 0;
-    color: $black;
-    font-weight: 600;
-
-    &:before {
-      content: "";
-      background: linear-gradient(45deg, $yellow, $black, $yellow);
-      position: absolute;
-      top: -0.125rem;
-      left: -0.125rem;
-      background-size: 400%;
-      z-index: -1;
-      filter: blur(5px);
-      width: calc(100% + 0.25rem);
-      height: calc(100% + 0.25rem);
-      animation: glowing 20s linear infinite;
-      opacity: 6%;
-      transition: opacity 0.3s ease-in-out;
-    }
-
-    &:active {
-      color: $yellow;
-    }
-
-    &:active:after {
-      background: transparent;
-    }
-
-    &:hover:before {
-      opacity: 1;
-    }
-
-    &:after {
-      z-index: -1;
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      left: 0;
-      top: 0;
-      background-color: $white;
-    }
-    @keyframes glowing {
-      0% {
-        background-position: 0 0;
+    
+      &__title {
+        // color: $black;
+        font-size: 1.25rem;
+        position: absolute;
+        top: 8.5rem;
+        right: -0.0625rem;
+        width: 18.75rem;
+    
+        @include tablet {
+          width: 24.875rem;
+          font-size: 1.3125rem;
+          top: 8.5rem;
+          right: 3.0625rem;
+    
+          line-height: 2.4375rem;
+        }
+    
+        @include desktop {
+          width: 25.625rem;
+          font-size: 1.4375rem;
+          top: 12.5rem;
+          right: 10.875rem;
+        }
       }
-      50% {
-        background-position: 400% 0;
+    
+      &__img {
+        display: none;
+        @include tablet {
+          width: 6.25rem;
+          position: absolute;
+          right: 5rem;
+          bottom: 6.5625rem;
+        }
       }
-      100% {
-        background-position: 0 0;
+    
+      &__link-container {
+        position: absolute;
+        top: 13.875rem;
+        right: 3.6875rem;
+        display: flex;
+        flex-direction: column;
+        width: 11.1875rem;
+        align-items: center;
+    
+        @include tablet {
+          right: 9rem;
+          top: 16.875rem;
+        }
+    
+        @include desktop {
+          right: 21rem;
+          top: 18.875rem;
+        }
+      }
+    
+      &__logo {
+        width: 6.25rem;
+        align-self: center;
+        object-fit: contain;
+        mix-blend-mode: color-burn;
+        z-index: 99999;
+        position: absolute;
+        top: 0.3125rem;
+        right: 10.6875rem;
+      }
+    
+      &__link {
+        vertical-align: middle;
+        text-decoration: none;
+        text-transform: uppercase;
+        width: 8.375rem;
+        height: 3.125rem;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        align-items: center;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        z-index: 0;
+        color: $yellow;
+        font-weight: 600;
+        height: 3.75rem;
+        margin-bottom: 20px;
+      }
+    
+      &__span {
+        font-style: italic;
+        color: $yellow;
+        line-height: 1.875rem;
       }
     }
-  }
 
-  &__span {
-    font-style: italic;
-    color: $yellow;
-    line-height: 1.875rem;
-  }
-}
+    .dark-theme {
+      background-color: purple;
+      color: white !important;
+    }
+    
+    .light-theme {
+      background-color: grey;
+      color: purple !important;
+      
+    }

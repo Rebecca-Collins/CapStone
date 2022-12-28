@@ -39,8 +39,12 @@
   }
 
   &__container {
-    background-color: $login-message-background;
+    background-color: $white;
     padding-top: 0.9375rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
   }
 
   &__players{
@@ -48,9 +52,11 @@
     flex-direction: row;
     justify-content: space-between;
     border: 1px solid $black;
-    max-width: 33.125rem;
-    margin: auto;
-    padding: 0.75rem;
+    // max-width: 33.125rem;
+    // margin: auto;
+    // padding: 0.75rem;
+    padding: 10px;
+    width: 250px;
     align-items: center;
 
     @include tablet {

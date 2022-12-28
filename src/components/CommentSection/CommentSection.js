@@ -15,8 +15,8 @@ function CommentSection({ fetchComments }) {
       .post("http://localhost:2020/comments/newcomment", requestBody)
       .then(async () => {
         try {
-          fetchComments();
-          setFirst_name(""); 
+          await fetchComments(); 
+          setFirst_name("");
           setContent("");
           document.getElementById("form-comment").reset();
         } catch (error) {
@@ -59,3 +59,5 @@ function CommentSection({ fetchComments }) {
 }
 
 export default CommentSection;
+
+
