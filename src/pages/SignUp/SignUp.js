@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-function SignUp() {
+function SignUp({toggleTheme}) {
   const navigate = useNavigate();
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
@@ -35,6 +35,7 @@ function SignUp() {
 
   return (
     <main className="signup-page">
+      <button onClick={toggleTheme}>Toggle theme</button>
       <form className="signup" onSubmit={handleSubmit}>
         <h1 className="signup__title">Sign up</h1>
 

@@ -2,179 +2,314 @@
 @use "../../styles/responsive" as *;
 @use "../../styles/mixins" as *;
 @use "../../styles/fonts" as *;
-    
-    .main {
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-      position: relative;
-    //   background-color: #1d0023;
-    
-      &__image-icon {
-        display: none;
-        @include mobile {
-          position: absolute;
-          top: 2.125rem;
-          left: 1.9375rem;
-          z-index: 9999;
-          width: 18.75rem;
-          display: inline;
-          animation: float 3s ease-in-out infinite;
-    
-          @keyframes float {
-            0% {
-              transform: translateY(0);
-            }
-            50% {
-              transform: translateY(-10px);
-            }
-            100% {
-              transform: translateY(0);
-            }
-          }
-        }
-        @include tablet {
-          top: 4.625rem;
-          left: 1.75rem;
-          width: 17.4375rem;
-        }
-    
-        @include desktop {
-          width: 25.875rem;
-          left: 5.625rem;
-        }
-      }
-    
-      &__signup-btn {
-        cursor: pointer;
-        position: absolute;
-        right: 11.8125rem;
-        text-decoration: none;
-        color: $yellow;
-        font-weight: 600;
-       
-      }
-    
-      &__heading {
-        color: $yellow;
-        position: absolute;
-        top: 4.5rem;
-        right: 2.5rem;
-        font-size: 1.875rem;
-    
-        @include tablet {
-          top: 4.5rem;
-          right: 5.5rem;
-          font-size: 2.8125rem;
-        }
-    
-        @include desktop {
-          font-size: 3.875rem;
-          top: 6.5rem;
-          right: 10.5rem;
-        }
-      }
-    
-      &__title {
-        // color: $black;
-        font-size: 1.25rem;
-        position: absolute;
-        top: 8.5rem;
-        right: -0.0625rem;
-        width: 18.75rem;
-    
-        @include tablet {
-          width: 24.875rem;
-          font-size: 1.3125rem;
-          top: 8.5rem;
-          right: 3.0625rem;
-    
-          line-height: 2.4375rem;
-        }
-    
-        @include desktop {
-          width: 25.625rem;
-          font-size: 1.4375rem;
-          top: 12.5rem;
-          right: 10.875rem;
-        }
-      }
-    
-      &__img {
-        display: none;
-        @include tablet {
-          width: 6.25rem;
-          position: absolute;
-          right: 5rem;
-          bottom: 6.5625rem;
-        }
-      }
-    
-      &__link-container {
-        position: absolute;
-        top: 13.875rem;
-        right: 3.6875rem;
-        display: flex;
-        flex-direction: column;
-        width: 11.1875rem;
-        align-items: center;
-    
-        @include tablet {
-          right: 9rem;
-          top: 16.875rem;
-        }
-    
-        @include desktop {
-          right: 21rem;
-          top: 18.875rem;
-        }
-      }
-    
-      &__logo {
-        width: 6.25rem;
-        align-self: center;
-        object-fit: contain;
-        mix-blend-mode: color-burn;
-        z-index: 99999;
-        position: absolute;
-        top: 0.3125rem;
-        right: 10.6875rem;
-      }
-    
-      &__link {
-        vertical-align: middle;
-        text-decoration: none;
-        text-transform: uppercase;
-        width: 8.375rem;
-        height: 3.125rem;
-        display: flex;
-        justify-content: center;
-        cursor: pointer;
-        align-items: center;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        z-index: 0;
-        color: $yellow;
-        font-weight: 600;
-        height: 3.75rem;
-        margin-bottom: 20px;
-      }
-    
-      &__span {
-        font-style: italic;
-        color: $yellow;
-        line-height: 1.875rem;
-      }
+
+.background {
+  position: relative;
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background-image: url("../../assets/images/footballnet4.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-x: -297px;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #373737;
+    opacity: 50%;
+  }
+
+  animation: slide 20s ease-in-out infinite;
+
+
+/* Define the keyframes for the animation */
+@keyframes slide {
+  0% {
+  background-position: right;
+  }
+  25% {
+  background-position: left;
+  }
+  50% {
+  background-position: right;
+  }
+  75% {
+    background-position: left;
+  }
+  100%{
+    background-position: right;
+  }
+  }
+  
+  @include tablet {
+    background-position-x: -173px;
+  }
+
+ 
+  //   background-color: #1d0023;
+
+  // &__image-icon {
+  // display: none;
+  // @include tablet {
+  // align-self: center;
+  // object-fit: contain;
+  // mix-blend-mode: color-burn;
+  // z-index: 99999;
+  // position: absolute;
+  // top: 28.625rem;
+  // left: 34.75rem;
+  // width: 17.4375rem;
+
+  // position: absolute;
+  // top: 2.125rem;
+  // left: 1.9375rem;
+  // z-index: 9999;
+  // width: 18.75rem;
+  //         display: inline;
+  //         /* Other styles for the soccer player image */
+  // animation: move-around 5s ease-in-out infinite;
+  // will-change: transform;
+
+  // @keyframes move-around {
+  //   0% {
+  //     /* Starting styles for the animation */
+  //     top: 50px;
+  //   }
+  //   25% {
+  //     /* Intermediate styles for the animation */
+  //     bottom: 80px;
+  //   }
+  //   50% {
+  //     /* Intermediate styles for the animation */
+  //     right: 90px;
+  //   }
+  //   75% {
+  //     /* Intermediate styles for the animation */
+  //     left:100px;
+  //   }
+  //   100% {
+  //     /* Ending styles for the animation */
+  //     top: 50px;
+  //   }
+
+  //   }
+  //   @include tablet {
+  //     align-self: center;
+  //     object-fit: contain;
+  //     mix-blend-mode: color-burn;
+  //     z-index: 99999;
+  //     position: absolute;
+  //     top: 28.625rem;
+  //     left: 34.75rem;
+  //     width: 17.4375rem;
+  //   }
+
+  //   @include desktop {
+  //     width: 25.875rem;
+  //     left: 5.625rem;
+  //   }
+  // }
+
+  &__signup-btn {
+    color: white;
+    position: absolute;
+    right: 5.8125rem;
+    font-weight: 600;
+    // box-shadow: 3px 3px 0 #9df803;
+    border: 2px solid #9df803;
+    // border-bottom: 2px solid #9df803;
+    // border-top: 2px solid #9df803;
+    margin-top: 17px;
+    padding: 4px 5px;
+
+    &:hover,
+    &:focus {
+      background-color: #333;
+      transform: skew(10deg, 0);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      border: none;
     }
 
-    .dark-theme {
-      background-color: purple;
-      color: white !important;
+    @include tablet {
+      right: 9.8125rem;
+      margin-top: 16px;
+      padding: 7px 19px;
     }
-    
-    .light-theme {
-      background-color: grey;
-      color: purple !important;
-      
+
+    @include desktop{
+      right: 11.8125rem;
     }
+  }
+
+  &__heading {
+    color: white;
+    position: absolute;
+    top: 8.5rem;
+    right: -1.5rem;
+    font-size: 52px;
+    width: 320px;
+    line-height: 57px;
+
+    @include tablet {
+      top: 8.5rem;
+      right: 10.5rem;
+      font-size: 4.8125rem;
+      line-height: 81px;
+      letter-spacing: 5px;
+    }
+
+    @include desktop {
+      font-size: 110px;
+      top: 6.5rem;
+      right: 22.5rem;
+      line-height: 118px;
+    }
+  }
+
+  &__span-heading {
+    margin-left: 91px;
+    color: #9df803;
+    @include tablet {
+      margin-left: 148px;
+    }
+
+    @include desktop {
+      margin-left: 212px;
+    }
+  }
+
+  &__title {
+    color: white;
+    font-size: 1.25rem;
+    position: absolute;
+    top: 17.5rem;
+    right: 8px;
+    width: 292px;
+    font-weight: 700;
+
+    @include tablet {
+      width: 24.875rem;
+      font-size: 27px;
+      top: 20.5rem;
+      right: 2.0625rem;
+      line-height: 2.4375rem;
+    }
+
+    @include desktop {
+      width: 28.625rem;
+      font-size: 31px;
+      top: 28.5rem;
+      right: 3.875rem;
+    }
+  }
+
+  // &__img {
+  //   display: none;
+  //   @include tablet {
+  //     width: 6.25rem;
+  //     position: absolute;
+  //     right: 5rem;
+  //     bottom: 6.5625rem;
+  //   }
+  // }
+
+  &__link-container {
+    position: absolute;
+    top: 29.875rem;
+    right: 10.6875rem;
+    padding: 0px 6px;
+    margin-top: 10px;
+    box-shadow: 3px 3px 0 #9df803;
+
+    &:hover,
+    &:focus {
+      background-color: #333;
+      transform: skew(10deg, 0);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    @include tablet {
+      right: 16rem;
+      top: 30.875rem;
+      letter-spacing: 2px;
+    }
+
+    @include desktop {
+      right: 24rem;
+      top: 40.875rem;
+      padding: 0px 12px;
+    }
+  }
+
+  &__link-sponsor {
+    position: absolute;
+    top: 29.875rem;
+    right: 1.6875rem;
+    padding: 0px 6px;
+    margin-top: 10px;
+    box-shadow: 3px 3px 0 #9df803;
+
+    &:hover,
+    &:focus {
+      background-color: #333;
+      transform: skew(10deg, 0);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    @include tablet {
+      right: 63px;
+      top: 30.875rem;
+      letter-spacing: 2px;
+    }
+
+    @include desktop {
+      top: 40.875rem;
+      padding: 0px 12px;
+    }
+  }
+
+  // &__logo {
+  //   width: 6.25rem;
+  //   align-self: center;
+  //   object-fit: contain;
+  //   mix-blend-mode: color-burn;
+  //   z-index: 99999;
+  //   position: absolute;
+  //   top: 0.3125rem;
+  //   right: 10.6875rem;
+  // }
+
+  &__link {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border: none;
+    font-size: 24px;
+
+    @include tablet {
+      font-size: 32px;
+    }
+
+    @include desktop {
+      font-size: 46px;
+    }
+  }
+
+  &__span {
+    font-style: italic;
+    color: #9df803;
+    line-height: 1.875rem;
+  }
+}

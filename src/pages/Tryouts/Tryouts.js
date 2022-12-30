@@ -1,8 +1,9 @@
 import "./Tryouts.scss";
 
-function Tryouts() {
+function Tryouts({toggleTheme}) {
   return (
     <div className="tryout-form">
+      <button onClick={toggleTheme}>Toggle theme</button>
       <div className="tryout-form__background">
         <div className="tryout-form__title-container">
           <h1 className="tryout-form__title">

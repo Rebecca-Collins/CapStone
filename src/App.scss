@@ -19,6 +19,7 @@ body {
 }
 
 a {
+  color:white;
 text-decoration: none;
 cursor: pointer;
 }
@@ -31,3 +32,17 @@ cursor: pointer;
 
 }
 
+.dark-theme {
+  background-color: #4D3C6B;
+  color: #ffdd53;
+}
+
+.light-theme {
+  background-color: #c6c6f5;
+  // color: #3e31ff;
+  color: #4D3C6B;
+  box-shadow: 0 0px 4px #fcad46;
+  // color: #fcad46;
+ 
+  
+}

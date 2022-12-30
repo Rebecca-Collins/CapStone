@@ -4,7 +4,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
-function Login() {
+function Login({toggleTheme}) {
   const [error, setError] = useState(false);
   const navigate = useNavigate();
 
@@ -28,6 +28,7 @@ function Login() {
 
   return (
     <main className="login-page">
+      <button onClick={toggleTheme}>Toggle theme</button>
       <form className="login" onSubmit={handleSubmit}>
         <h1 className="login__title">Log in</h1>
         <Input type="text" name="email" label="Email" />

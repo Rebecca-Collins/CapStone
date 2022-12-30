@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import CommentSection from "../../components/CommentSection/CommentSection";
 import CommentList from "../../components/CommentList/CommentList";
 
-function HomePage({ players }) {
+function HomePage({ players, toggleTheme }) {
   const [user, setUser] = useState([]);
   const [failedAuth, setFailedAuth] = useState(false);
   const [comments, setComments] = useState([]);
@@ -72,6 +72,7 @@ function HomePage({ players }) {
 
   return (
     <section>
+      <button onClick={toggleTheme}>Toggle theme</button>
       <HomeNav />
       <Link to="/" className="dashboard__logout" onClick={handleLogout}>
         Log out

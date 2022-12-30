@@ -35,11 +35,11 @@ function App() {
   return (
     <BrowserRouter>
       <div className={theme === 'dark' ? 'dark-theme' : 'light-theme'}>
-      <button onClick={toggleTheme}>Toggle theme</button>
+      {/* <button onClick={toggleTheme}>Toggle theme</button> */}
       <Routes>
         <Route
           path="/"
-          element={<Main theme={theme} toggleTheme={toggleTheme} />}
+          element={<Main />}
         />
         <Route
           path="/login"

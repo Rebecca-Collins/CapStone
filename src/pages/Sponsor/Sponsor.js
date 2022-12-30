@@ -3,10 +3,11 @@ import "./Sponsor.scss"
 import closeIcon from "../../assets/icons/close.svg"
 import { Link } from "react-router-dom";
 
-function Sponsor() {
+function Sponsor({toggleTheme}) {
 
   return (
 <main className="sponsor-form">
+<button onClick={toggleTheme}>Toggle theme</button>
   <Link className="sponsor-form__close" to="/homepage">
   <img  src={closeIcon} alt="close icon"/>
   </Link>

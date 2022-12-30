@@ -7,7 +7,7 @@ import DeletePlayer from "../../components/DeletePlayer/DeletePlayer";
 import { Link } from "react-router-dom";
 
 
-function Admin({ players }) {
+function Admin({ players, toggleTheme }) {
 
   //  ---- ADMIN AUTH
   const [admin, setAdmin] = useState(false);
@@ -40,7 +40,9 @@ function Admin({ players }) {
   }, []);
 
   return (
+    
     <div className="admin">
+     
       {failedAuth && (
         <div className="admin__text-message">
           There was an error authenticating your session. Please try logging in
@@ -57,6 +59,7 @@ function Admin({ players }) {
       )}
       {admin && (
         <div>
+                <button onClick={toggleTheme}>Toggle theme</button>
           <div className="admin__welcome">
             Welcome, <span className="admin__admin-color">Admin!</span> You are
             now logged in!

@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import closeIcon from "../../assets/icons/close.svg";
 
-function PlayerDetails({ players }) {
+function PlayerDetails({ players, toggleTheme }) {
   const { playerId } = useParams();
 
   const [singlePlayer, setSinglePlayer] = useState({
@@ -32,6 +32,7 @@ function PlayerDetails({ players }) {
 
   return (
     <section className="single-player">
+      <button onClick={toggleTheme}>Toggle theme</button>
       <div>
         <Link className="single-player__home-link" to="/homepage">
           <img
