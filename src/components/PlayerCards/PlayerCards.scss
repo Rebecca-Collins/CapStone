@@ -18,6 +18,11 @@
     margin: auto;
     gap: -0.25rem;
     padding-top: 0.625rem;
+
+    @include desktop{
+      padding: 0.625rem 0 40px;
+      gap: 18px;
+    }
   }
 
   &__container {

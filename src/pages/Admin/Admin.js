@@ -5,9 +5,12 @@ import "./Admin.scss";
 import AddPlayer from "../../components/AddPlayer/AddPlayer";
 import DeletePlayer from "../../components/DeletePlayer/DeletePlayer";
 import { Link } from "react-router-dom";
+import light from "../../assets/icons/light.svg";
+import dark from "../../assets/icons/dark.svg";
+import HomeNav from "../../components/HomeNav/HomeNav"
 
 
-function Admin({ players, toggleTheme }) {
+function Admin({ players, toggleTheme, theme }) {
 
   //  ---- ADMIN AUTH
   const [admin, setAdmin] = useState(false);
@@ -42,6 +45,7 @@ function Admin({ players, toggleTheme }) {
   return (
     
     <div className="admin">
+      
      
       {failedAuth && (
         <div className="admin__text-message">
@@ -59,19 +63,29 @@ function Admin({ players, toggleTheme }) {
       )}
       {admin && (
         <div>
-                <button onClick={toggleTheme}>Toggle theme</button>
-          <div className="admin__welcome">
-            Welcome, <span className="admin__admin-color">Admin!</span> You are
-            now logged in!
-          </div>
+          <div className="admin-toggle" onClick={toggleTheme}>
+        {" "}
+        {theme === "light" ? (
+          <img className="toggle-admin-img" src={light} alt="dark icon" />
+        ) : (
+          <img className="toggle-admin-img" src={dark} alt="light icon" />
+        )}
+      </div>
+       
+      <HomeNav/>
+      <div className={theme === "dark" ? "dark-admin" : "light-admin"}>
+          
 
-          <div className="admin__container">
-          <AddPlayer players={players} />
-          <DeletePlayer players={players}/>
-          </div>
+          {/* <div className="admin__container"> */}
+          <AddPlayer players={players} theme={theme} toggleTheme={toggleTheme}/>
+          <DeletePlayer players={players} theme={theme} toggleTheme={toggleTheme}/>
+          {/* </div> */}
+        </div>
+       
         </div>
       )}
     </div>
+  
   );
 }
 

@@ -6,8 +6,10 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import CommentSection from "../../components/CommentSection/CommentSection";
 import CommentList from "../../components/CommentList/CommentList";
+import light from "../../assets/icons/light.svg";
+import dark from "../../assets/icons/dark.svg";
 
-function HomePage({ players, toggleTheme }) {
+function HomePage({ players, toggleTheme, theme }) {
   const [user, setUser] = useState([]);
   const [failedAuth, setFailedAuth] = useState(false);
   const [comments, setComments] = useState([]);
@@ -72,20 +74,28 @@ function HomePage({ players, toggleTheme }) {
 
   return (
     <section>
-      <button onClick={toggleTheme}>Toggle theme</button>
-      <HomeNav />
-      <Link to="/" className="dashboard__logout" onClick={handleLogout}>
-        Log out
-      </Link>
-      <div>
-        <h1 className="home">
-          Oceanside <span className="home__span-home">United</span>
-        </h1>
+      <div className="homepage-toggle" onClick={toggleTheme}>
+        {" "}
+        {theme === "light" ? (
+          <img className="toggle-homepage-img" src={light} alt="dark icon" />
+        ) : (
+          <img className="toggle-homepage-img" src={dark} alt="light icon" />
+        )}
       </div>
-      <PlayerCards players={players} />
-      <CommentSection fetchComments={fetchComments} />
-      <CommentList comments={comments} />
-    
+      <div className={theme === "dark" ? "dark-text" : "light-text"}>
+        <HomeNav theme={theme} />
+        <Link to="/" className="dashboard__logout" onClick={handleLogout}>
+          Log out
+        </Link>
+        <div>
+          <h1 className="home">
+            Oceanside <span className="home__span-home">United</span>
+          </h1>
+        </div>
+        <PlayerCards players={players} />
+        <CommentSection theme={theme} fetchComments={fetchComments} />
+        <CommentList comments={comments} fetchComments={fetchComments} />
+      </div>
     </section>
   );
 }

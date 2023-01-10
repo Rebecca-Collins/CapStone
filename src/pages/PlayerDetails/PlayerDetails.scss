@@ -3,36 +3,59 @@
 @use "../../styles/mixins" as *;
 @use "../../styles/fonts" as *;
 
-.single-player {
-  background-color: $white;
-  position: relative;
+.player-details-toggle{
+  position: absolute;
+  top: 15px;
+  right: 90px;
 
   @include tablet {
-    display: flex;
+      top: 15px;
+      right: 90px;
+  }
+
+  @include desktop{
+    top: 12px;
+    right: 25px;
+  }
+}
+
+.toggle-player-details-img{
+  width: 32px;
+
+  @include tablet{
+      width: 37px
+  }
+
+  @include desktop {
+    width: 42px;
+  }
+}
+
+.light-player-details{
+  position: relative;
+  height: 100vh;
+
+  @include tablet {
+    // display: flex;
     margin: auto;
     width: 48.1875rem;
   }
+}
 
-  &__home-link {
-    position: absolute;
-    top: 0.625rem;
-    left: 0.625rem;
-    cursor: pointer;
+.dark-player-details{
+  position: relative;
+  height: 100vh;
 
-    @include desktop {
-      left: -14.125rem;
-      top: 1.4375rem;
-    }
+  @include tablet {
+    // display: flex;
+    margin: auto;
+    width: 48.1875rem;
   }
+}
 
-  &__close-icon {
-    width: 1.6875rem;
 
-    @include desktop {
-      width: 3.125rem;
-    }
-  }
-
+.single-player {
+  
   &__heading {
     // color: $black;
     width: 12.5rem;
@@ -133,11 +156,11 @@
     // color: $black;
     width: 15.25rem;
     margin: auto;
-    border-top: 1px solid $border-underline;
+    border-top: 1px solid #C3FD60;
     padding: 0.625rem 0 1.3125rem 0.625rem;
 
     @include tablet {
-      border-left: 1px solid $border-underline;
+      border-left: 1px solid #C3FD60;
       border-top: none;
       padding: 1.3125rem 0 1.3125rem 0.8125rem;
       position: absolute;

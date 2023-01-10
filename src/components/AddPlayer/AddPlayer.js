@@ -5,7 +5,7 @@ import addIcon from "../../assets/icons/add.svg"
 import Input from "../../components/Input/Input";
 import axios from "axios";
 
-function AddPlayer() {
+function AddPlayer({toggleTheme, theme}) {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
   const [formVisible, setFormVisible] = useState(false);
@@ -65,11 +65,14 @@ function AddPlayer() {
   };
 
   return (
+    
     <section className="add-player">
+      
          <button className="add-player__button" onClick={toggleForm}>Add Player <img className="add-player__icon" src={addIcon} alt="Add Player Icon"/></button>
          {formVisible &&
-        <form onSubmit={handleAdd}>
-          <Input
+          <div className={theme === "dark" ? "dark-add" : "light-add"}>
+        <form className="add-player__input" onSubmit={handleAdd}>
+          <Input 
             type="text"
             onChange={addPlayer}
             required={true}
@@ -78,7 +81,7 @@ function AddPlayer() {
             label="First name"
             id="first_name"
           />
-          <Input
+          <Input 
             type="text"
             onChange={addPlayer}
             required={true}
@@ -87,7 +90,7 @@ function AddPlayer() {
             label="Last name"
             id="last_name"
           />
-          <Input
+          <Input 
             type="text"
             onChange={addPlayer}
             required={true}
@@ -105,7 +108,7 @@ function AddPlayer() {
             label="Height"
             id="height"
           />
-          <Input
+          <Input 
             type="text"
             onChange={addPlayer}
             required={true}
@@ -114,7 +117,7 @@ function AddPlayer() {
             label="Jersey Number"
             id="jersey"
           />
-          <Input
+          <Input 
             type="text"
             onChange={addPlayer}
             required={true}
@@ -123,7 +126,8 @@ function AddPlayer() {
             label="Description"
             id="description"
           />
-          <Input
+
+          <Input 
             type="text"
             onChange={addPlayer}
             required={true}
@@ -132,7 +136,8 @@ function AddPlayer() {
             label="Position"
             id="position"
           />
-          <Input
+         
+          <input className="add-player__upload"
             type="file"
             onChange={addPlayer}
             required={true}
@@ -141,11 +146,14 @@ function AddPlayer() {
             label="Player Image"
             id="img"
           />
-          <button>CREATE</button>
-          {success && <div className="signup__message">Player Uploaded</div>}
-          {error && <div className="signup__message">{error}</div>}
+
+          <button className="add-player__form-button">CREATE</button>
+          {success && <div className="add-player__message">Player Uploaded</div>}
+          {error && <div className="add-player__message">{error}</div>}
         </form>
+       </div>
 }
+    
     </section>
   );
 }

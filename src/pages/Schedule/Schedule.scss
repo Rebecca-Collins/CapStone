@@ -3,63 +3,187 @@
 @use "../../styles/mixins" as *;
 @use "../../styles/fonts" as *;
 
+// .light-schedule {
+//   color: white;
+// }
+
+// .dark-schedule {
+//   color: white;
+// }
+
+.schedule-toggle{
+  position: absolute;
+  top: 15px;
+  right: 19px;
+
+  @include tablet {
+      top: 15px;
+      right: 21px;
+  }
+
+  @include desktop{
+    top: 12px;
+    right: 36px;
+  }
+}
+
+.toggle-schedule-img{
+  width: 32px;
+
+  @include tablet{
+      width: 37px
+  }
+
+  @include desktop {
+    width: 42px;
+  }
+}
+
+.light-schedule-box-shadow {
+  box-shadow: 0 0 1.25rem rgb(0 0 0 / 57%);
+  border-collapse: collapse;
+  margin: 1.5625rem 0;
+  height: 25rem;
+  font-size: 0.8125rem;
+  color: black;
+  background-color: rgb(2 148 34 / 65%);
+  
+  @include tablet {
+    width: 39.4375rem;
+    height: 21.875rem;
+    margin: auto;
+  }
+
+  @include desktop{
+    width: 61.4375rem;
+    height: 33.875rem;
+  }
+}
+
+.dark-schedule-box-shadow {
+  box-shadow: 0 0 1.25rem rgb(219 222 220 / 31%);
+  color: white;
+  border-collapse: collapse;
+  margin: 1.5625rem 0;
+  height: 25rem;
+  font-size: 0.8125rem;
+  background-color: rgb(70 70 70 / 58%);
+ 
+  @include tablet {
+    width: 39.4375rem;
+    height: 21.875rem;
+    margin: auto;
+  }
+
+  @include desktop{
+    width: 61.4375rem;
+    height: 33.875rem;
+  }
+}
+
 .schedule {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  position: relative;
+  height: 100vh;
+  width: 315px;
+  margin: auto;
 
-  &__home-link {
-    position: absolute;
-    left: .75rem;
-
-    @include desktop {
-      left: 1.5rem;
-      top: 1rem;
-    }
+  @include tablet {
+    margin: 0;
+    width: 100vw;
   }
 
-  &__table {
-    border-collapse: collapse;
-    margin: 1.5625rem 0;
-    height: 25rem;
-    font-size: 0.8125rem;
-    box-shadow: 0 0 1.25rem $form-shadow;
+  &__heading {
+    display: flex;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    font-size: 1.25rem;
+    margin-top: 22px;
+
     @include tablet {
-      width: 39.4375rem;
-      height: 21.875rem;
+      margin: 21px 0;
+      font-size: 26px;
+    }
+
+    @include desktop{
+      font-size: 45px;
     }
   }
 
-  &__table thead tr {
-    background-color: $yellow;
-    color: $white;
-    text-align: center;
-  }
-
-  &__table th,
-  .schedule__table td {
-    padding: 1rem 0.3125rem;
-    text-align: center;
-  }
-
-  &__table tbody tr {
-    border-bottom: 1px solid $login-message-background;
-  }
-
-  // &__table tbody tr:nth-of-type(even) {
-  //   background-color: $login-background;
+  // &__table-row-bottom{
+  //   display:flex;
   // }
+}
 
-  &__table tbody tr:last-of-type {
-    border-bottom: 2px solid $yellow;
-  }
+table thead tr {
+  border-bottom: 1px solid $login-message-background;
+  background-color: #e9ecef;
+  color: #333;
+  // border-collapse: collapse;
+  // font-size: 12px;
 
-  &__table tbody tr:hover {
-    cursor: pointer;
-    background-color: $black;
-    color: $yellow;
+  @include desktop{
+    font-size: 18px;
   }
+  
+  // text-align: right;
+}
+
+table th,
+.schedule__table td {
+  padding: 1rem 0.3125rem;
+  text-align: center;
+ 
+ 
+}
+
+table tbody tr:nth-of-type(even) {
+  background-color: #1338a09c;
+  // background-color: #092539;
+ 
+    color: white;
+}
+
+table tbody tr {
+  
+  border-bottom: 1px solid $login-message-background;
+  @include desktop{
+    font-size: 18px;
+  }
+  
+}
+
+table tbody tr:hover {
+  cursor: pointer;
+  background-color: $black;
+  
+}
+
+.active{
+  padding: 0 11px;
+  font-size: 12px;
+  height: 78px;
+  @include tablet{
+    padding-left: 20px;
+  }
+  @include desktop{
+    padding-left: 31px;
+  }
+}
+
+.active-row{
+  padding: 0 11px;
+    font-size: 12px;
+    height: 78px;
+  @include tablet {
+    padding-left: 20px;
+  }
+  @include desktop{
+    padding-left: 31px;
+  }
+}
+
+.schedule__td{
+
+  @include tablet{
+    padding-left: 10px;
+}
 }

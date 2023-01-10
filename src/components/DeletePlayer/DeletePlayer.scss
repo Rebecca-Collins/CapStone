@@ -2,37 +2,103 @@
 @use "../../styles/colors" as *;
 @use "../../styles/responsive" as *;
 
-.delete-player{
-    background-color: #333;
-    color: white;
-    font-family: 'Helvetica Neue', sans-serif;
-    font-size: 18px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 10px 20px;
-    box-shadow: 0 5px 6px rgb(0 0 0 / 35%);
-    margin-bottom: 10px;
-    border-radius: 7.7rem;
-    margin-left: 20px;
-    // transition: all 0.3s ease;
-    // @include button-style;
-    // outline: none;
-    // border:none;
-    // margin-bottom: 1rem;
-   
-    // padding: 19px 28px;
-    // font-size: inherit;
-    // cursor: pointer;
-    // position: relative;
-    // color: #fff;
-    // background: #111;
-    // display: flex;
-    align-items: center;
-    display: flex;
+.light-delete {
+  box-shadow: 0 0px 4px #000000;
+  border-radius: 0.5rem;
+  background-color: #76a8c4;
+  color: rgb(238 238 238);
+  font-size: 18px;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 1px solid $black;
+  padding: 10px;
+  width: 250px;
+  align-items: center;
+  margin-bottom: 11px;
 
-    &__player-icon{
-        width: 1.5rem;
-        margin-left: .5rem;
-    }
+  @include tablet {
+    padding: 0.875rem;
+    width: 27rem;
+  }
+
+  @include desktop {
+    width: 31rem;
+  }
 }
+
+.dark-delete {
+  box-shadow: 0 0px 4px #ffffff;
+  border-radius: 0.5rem;
+  background-color: #00396b;
+  color: white;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 1px solid $black;
+  padding: 10px;
+  width: 250px;
+  align-items: center;
+  margin-bottom: 11px;
+
+  @include tablet {
+    padding: 0.875rem;
+    width: 27rem;
+  }
+
+  @include desktop {
+    width: 31rem;
+  }
+}
+
+.delete-player {
+  background-color: #333;
+  color: white;
+  // font-family: 'Helvetica Neue', sans-serif;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  box-shadow: 0 5px 6px rgb(0 0 0 / 35%);
+  margin-bottom: 10px;
+  border-radius: 7.7rem;
+  margin-left: 20px;
+  align-items: center;
+  display: flex;
+
+  &__player-icon {
+    width: 1.5rem;
+    margin-left: 0.5rem;
+  }
+
+  &__info {
+    // color: $black;
+    display: flex;
+    gap: 0.625rem;
+  }
+
+  &__color {
+    color: #C3FD60;
+  }
+
+//   &__color-admin {
+//     color: $white;
+//   }
+
+  &__delete-container {
+    display: flex;
+    gap: 0.9375rem;
+  }
+
+  &__delete-text {
+    font-size: 0.75rem;
+  }
+}
+

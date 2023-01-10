@@ -56,71 +56,6 @@
     background-position-x: -173px;
   }
 
- 
-  //   background-color: #1d0023;
-
-  // &__image-icon {
-  // display: none;
-  // @include tablet {
-  // align-self: center;
-  // object-fit: contain;
-  // mix-blend-mode: color-burn;
-  // z-index: 99999;
-  // position: absolute;
-  // top: 28.625rem;
-  // left: 34.75rem;
-  // width: 17.4375rem;
-
-  // position: absolute;
-  // top: 2.125rem;
-  // left: 1.9375rem;
-  // z-index: 9999;
-  // width: 18.75rem;
-  //         display: inline;
-  //         /* Other styles for the soccer player image */
-  // animation: move-around 5s ease-in-out infinite;
-  // will-change: transform;
-
-  // @keyframes move-around {
-  //   0% {
-  //     /* Starting styles for the animation */
-  //     top: 50px;
-  //   }
-  //   25% {
-  //     /* Intermediate styles for the animation */
-  //     bottom: 80px;
-  //   }
-  //   50% {
-  //     /* Intermediate styles for the animation */
-  //     right: 90px;
-  //   }
-  //   75% {
-  //     /* Intermediate styles for the animation */
-  //     left:100px;
-  //   }
-  //   100% {
-  //     /* Ending styles for the animation */
-  //     top: 50px;
-  //   }
-
-  //   }
-  //   @include tablet {
-  //     align-self: center;
-  //     object-fit: contain;
-  //     mix-blend-mode: color-burn;
-  //     z-index: 99999;
-  //     position: absolute;
-  //     top: 28.625rem;
-  //     left: 34.75rem;
-  //     width: 17.4375rem;
-  //   }
-
-  //   @include desktop {
-  //     width: 25.875rem;
-  //     left: 5.625rem;
-  //   }
-  // }
-
   &__signup-btn {
     color: white;
     position: absolute;
@@ -172,8 +107,9 @@
     @include desktop {
       font-size: 110px;
       top: 6.5rem;
-      right: 22.5rem;
+      right: 28.5rem;
       line-height: 118px;
+     
     }
   }
 
@@ -247,7 +183,7 @@
 
     @include desktop {
       right: 24rem;
-      top: 40.875rem;
+     top: 36.875rem;
       padding: 0px 12px;
     }
   }
@@ -274,7 +210,7 @@
     }
 
     @include desktop {
-      top: 40.875rem;
+      top: 36.875rem;
       padding: 0px 12px;
     }
   }

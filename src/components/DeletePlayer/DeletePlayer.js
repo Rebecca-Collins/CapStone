@@ -4,7 +4,7 @@ import "./DeletePlayer.scss"
 import axios from "axios";
 import React, { useState } from "react";
 
-function DeletePlayer({players}) {
+function DeletePlayer({players, theme}) {
 
 
     const [deleteVisible, setDeleteVisible] = useState(false);
@@ -30,28 +30,31 @@ function DeletePlayer({players}) {
   return (
     <div>
         <button className="delete-player" onClick={toggleDelete}>Delete Player<img className="delete-player__player-icon" src={deletePlayer} alt="delete player icon"/></button>
+        
         {deleteVisible &&
+
         <div>
             {players
               .filter((player) => !deletedPlayers.includes(player.id))
               .map((player) => (
-                <div className="admin__players" key={player.id}>
+                <div className={theme === "dark" ? "dark-delete" : "light-delete"} key={player.id}>
+               
                     
-                  <p className="admin__info">
+                  <p className="delete-player__info">
                     {player.first_name}
-                    <span className="admin__color">{player.last_name}</span>
+                    <span className="delete-player__color">{player.last_name}</span>
                   </p>
 
                   <div
-                    className="admin__delete-container"
+                    className="delete-player__delete-container"
                     onClick={() => {
                       handleDelete(player);
                       console.log(player);
                     }}
                   >
-                    <p className="admin__delete-text">Delete</p>
+                    {/* <p className="delete-player__delete-text">Delete</p> */}
                     <img
-                      className="admin__icon"
+                      className="delete-player__icon"
                       src={deleteicon}
                       alt={deleteicon}
                     />
@@ -60,8 +63,10 @@ function DeletePlayer({players}) {
                 
               ))}
               </div>
+              
               }
-    </div>
+              </div>
+   
   )
 }
 

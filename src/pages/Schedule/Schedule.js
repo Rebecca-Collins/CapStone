@@ -1,10 +1,11 @@
 import "./Schedule.scss";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import iconClose from "../../assets/icons/close.svg";
-import { Link } from "react-router-dom";
+import HomeNav from "../../components/HomeNav/HomeNav";
+import light from "../../assets/icons/light.svg";
+import dark from "../../assets/icons/dark.svg";
 
-function Schedule() {
+function Schedule({theme, toggleTheme}) {
   const [schedule, setSchedule] = useState([]);
 
   useEffect(() => {
@@ -20,18 +21,20 @@ function Schedule() {
   }, []);
 
   return (
-    <section className="schedule">
-      <div>
-        <Link className="schedule__home-link" to="/homepage">
-          <img
-            className="schedule__close-icon"
-            src={iconClose}
-            alt="close icon"
-          />
-        </Link>
+   <section>
+       <div className="schedule-toggle" onClick={toggleTheme}>
+        {" "}
+        {theme === "light" ? (
+          <img className="toggle-schedule-img" src={light} alt="dark icon" />
+        ) : (
+          <img className="toggle-schedule-img" src={dark} alt="light icon" />
+        )}
       </div>
+       <div className={theme === "dark" ? "dark-schedule" : "light-schedule"}>
+       <HomeNav/>
+       <div className="schedule">
       <h1 className="schedule__heading"> TEAM SCHEDULE</h1>
-      <table className="schedule__table">
+      <table className={theme === "dark" ? "dark-schedule-box-shadow" : "light-schedule-box-shadow"}>
         <thead>
           <tr className="schedule__table-row">
             <th className="schedule__title">Data</th>
@@ -53,6 +56,8 @@ function Schedule() {
           ))}
         </tbody>
       </table>
+      </div>
+    </div>
     </section>
   );
 }

@@ -1,26 +1,26 @@
 @use "./colors" as *;
 
 /* Create a mixin to choose the correct theme styles */
-@mixin apply-theme($theme) {
-  @if $theme == 'dark' {
-    @include dark;
-  } @else {
-    @include light;
-  }
-}
+// @mixin apply-theme($theme) {
+//   @if $theme == 'dark' {
+//     @include dark;
+//   } @else {
+//     @include light;
+//   }
+// }
 
 
-@mixin light {
-    background-color: yellow;
-    color: green;
+// @mixin light {
+//     background-color: yellow;
+//     color: green;
   
-}
+// }
 
-@mixin dark {
-    background-color: blue;
-    color: white;
+// @mixin dark {
+//     background-color: blue;
+//     color: white;
 
-}
+// }
 
 @mixin form-title {
   margin-top: 0;
@@ -35,7 +35,6 @@
     #fdfd97,
     #9ee09e,
     #9ec1cf,
-    #002bff63,
     #cc99c9,
     #e171c8,
     #ff6663

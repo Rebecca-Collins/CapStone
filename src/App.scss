@@ -15,11 +15,12 @@
 
 body {
     overflow-x: hidden;
-    font-family: "Titillium Web", sans-serif;  
+    font-family: 'Montserrat', sans-serif;
+    // font-family: "Titillium Web", sans-serif;  
 }
 
 a {
-  color:white;
+  // color:#FA7E05;
 text-decoration: none;
 cursor: pointer;
 }
@@ -33,16 +34,14 @@ cursor: pointer;
 }
 
 .dark-theme {
-  background-color: #4D3C6B;
-  color: #ffdd53;
+  background-color: #000000e8;
+  color: white;
+ 
 }
 
+
 .light-theme {
-  background-color: #c6c6f5;
-  // color: #3e31ff;
-  color: #4D3C6B;
-  box-shadow: 0 0px 4px #fcad46;
-  // color: #fcad46;
+  background-color: rgb(22 169 205);
+  color: white;
  
-  
 }

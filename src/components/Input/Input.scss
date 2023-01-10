@@ -1,11 +1,17 @@
 @use "../../styles/colors" as *;
+@use "../../styles//responsive" as *;
 
 .field {
     display: flex;
     flex-direction: column;
+    color: rgb(45 169 230 / 93%);
 
     &__label {
         margin-bottom: 0.5rem;
+
+        @include desktop {
+            font-size: 21px;
+        }
     }
 
     &__input {
@@ -14,5 +20,6 @@
         border-radius: 0.5rem;
         padding: 0.5rem;
         font-size: inherit;
+      
     }
 }

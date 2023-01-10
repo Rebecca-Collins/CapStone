@@ -3,6 +3,8 @@
 @use "../../styles/mixins" as *;
 @use "../../styles/fonts" as *;
 
+
+
 .comments {
   max-width: 29.4375rem;
   display: flex;
@@ -15,33 +17,51 @@
   }
 
   @include desktop {
-    max-width: 33.125rem;
+    max-width: 40.125rem;
   }
 
   &__text {
     border-bottom: 1px solid grey;
     margin: 0.75rem;
+    display: flex;
+    height: 150px;
+    justify-content: space-between;
+    flex-direction: column;
+    position: relative;
 
     @include tablet {
       font-size: 1.1875rem;
     }
   }
 
+
   &__name {
-    color: $yellow;
+    color: #C3FD60;
+    margin-bottom: 10px;
   }
 
   &__content {
-    margin-bottom: 0.3125rem;
+    display: flex;
+    align-items: center;
+    width: 291px;
+    margin-left: .9375rem;
 
     @include tablet {
       font-size: 1.125rem;
     }
   }
 
-  &__time {
-    font-size: .8125rem;
-    margin-bottom: 0.625rem;
-    color: $time;
+  &__date-content{
+    display: flex;
   }
+
+  &__time {
+    font-size: .6875rem;
+    margin-bottom: 0.625rem;
+    position: absolute;
+    top: 0;
+    right: 50px;
+  }
+
+
 }

@@ -1,0 +1,10 @@
+.delete{
+    display:flex;
+    justify-content: flex-end;
+
+    &__comment-icon{
+        display: flex;
+        margin-bottom: .625rem;
+    }
+}
+

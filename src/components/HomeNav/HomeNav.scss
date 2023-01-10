@@ -1,13 +1,14 @@
 @use "../../styles/colors" as *;
 @use "../../styles/responsive" as *;
 
-// .home-nav {
-//   height: 4.125rem;
-//   background-color: $yellow;
-// }
+
+.home-nav {
+  height: 5.125rem;
+  background-color: #C3FD60;
+}
 
 .navigation {
-  background: $burger-menu-background;
+  background: rgb(0 0 0 / 93%);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -44,6 +45,11 @@
     left: 0;
     z-index: 101;
     margin-top: .625rem;
+
+    @include desktop {
+      margin: 16px 0 12px 18px;
+      padding: 0;
+    }
    
     .controller {
       display: inline-block;
@@ -138,4 +144,148 @@
       }
     }
   }
+
+
+
+
+
+
+// .home-nav {
+//   height: 4.125rem;
+//   background-color: $yellow;
+// }
+
+// .navigation {
+//   background: rgb(0 0 0 / 93%);
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   left: -100%;
+//   transition: left 0.3s;
+//   width: 100%;
+//   z-index: 100;
+  
+//   h1,
+//   h1 .navigation-link {
+//     color: white;
+//     width: 100%;
+//     text-align: center;
+//     z-index: 101; 
+//   }
+//   h1 .navigation-link {
+//     display: block;
+//     font-size: 1.375rem;
+//     margin: 1.25rem 1.25rem 0 0;
+//     text-decoration: none;
+//     transition: all 0.3s ease;
+   
+//       &:hover {
+//         background: $menu-hover; 
+//     }
+//   }
+// }
+
+//   .home-nav__toggle {
+//     display: block;
+//     padding: .625rem;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     z-index: 101;
+//     margin-top: .625rem;
+   
+//     .controller {
+//       display: inline-block;
+//       height: 1.625rem;
+//       padding: 0rem 0rem;
+//       cursor: pointer;
+//       opacity: 0.97;
+//       transition: all 0.3s ease;
+      
+
+//       span {
+//         display: inline-block;
+//         text-transform: uppercase;
+//         line-height: 1.125rem;
+//         font-size: 1.125rem;
+//         font-weight: 700;
+//         color: $white;
+//         margin-left: 0rem;
+//         width: 0rem;
+//       }
+  
+//       .slide {
+//         position: relative;
+//         top: -0.125rem;
+//         width: 1.25rem;
+//         height: .25rem;
+//         background: $;
+//         display: inline-block;
+  
+//         &:before,
+//         &:after {
+//           display: block;
+//           content: "";
+//           height: .25rem;
+//           width: 1.25rem;
+//           background: $yellow;
+//           position: absolute;
+//           z-index: -1;
+//           transition: all 0.1s 0.2s ease, transform 0.2s ease;
+        
+//         }
+  
+//         &:before {
+//           top: .5rem;
+//           background: $yellow;
+          
+//         }
+  
+//         &:after {
+//           top: -0.5rem;
+          
+//         }
+//       }
+//     }
+   
+//   }
+//   .nav-control {
+//     position: absolute;
+//     left: -624.9375rem;
+//     width: 100%;
+//     clip: rect(0, 0, 0, 0);
+   
+  
+//     &:checked ~ .navigation {
+//       left: 0;
+//       opacity: 1;
+//       transition: left 0.3s, opacity 0.3s;
+      
+//     }
+//     &:checked ~ .home-nav__toggle {
+//       .controller {
+//         .slide {
+//           transition: all 0.1s 0s ease;
+//           background: trasparent !important;
+//           z-index: 101;
+          
+//           &:before,
+//           &:after {
+//             background: $close;
+//             transition: all 0.1s ease, transform 0.1s 0.2s ease;
+//             top: 0;
+//             width: 1.25rem;
+//           }
+  
+//           &:before {
+//             transform: rotate3d(0, 0, 1, 45deg);
+//           }
+  
+//           &:after {
+//             transform: rotate3d(0, 0, 1, -45deg);
+//           }
+//         }
+//       }
+//     }
+//   }
  
