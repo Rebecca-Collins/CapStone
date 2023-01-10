@@ -3,7 +3,8 @@ import axios from "axios";
 import { useState } from "react";
 import "./CommentSection.scss";
 
-function CommentSection({ fetchComments }) {
+
+function CommentSection({ fetchComments, theme }) {
   const [first_name, setFirst_name] = useState("");
   const [content, setContent] = useState("");
 
@@ -15,10 +16,10 @@ function CommentSection({ fetchComments }) {
       .post("http://localhost:2020/comments/newcomment", requestBody)
       .then(async () => {
         try {
-          fetchComments();
-          setFirst_name(""); 
+          await fetchComments(); 
+          setFirst_name("");
           setContent("");
-          document.getElementById("form-comment").reset();
+          // document.getElementById("form-comment").reset();
         } catch (error) {
           return console.log(error);
         }
@@ -26,11 +27,13 @@ function CommentSection({ fetchComments }) {
   };
 
   return (
+   
     <div className="form-home">
+       <div className={theme === 'dark' ? 'dark-background' : 'light-background'}>
       <h3 className="form-home__heading">Add a comment</h3>
 
       <form className="form-home__container" onSubmit={handleSubmit}>
-        <label className="form-home__name">First Name:</label>
+        <label className="form-home__name">Name:</label>
         <input
           className="form-home__name-input"
           type="text"
@@ -40,7 +43,7 @@ function CommentSection({ fetchComments }) {
           onChange={(e) => setFirst_name(e.target.value)}
         />
 
-        <label className="form-home__name">Add a comment</label>
+        <label className="form-home__name">Add a comment:</label>
         <textarea
           className="form-home__textarea"
           id="content"
@@ -55,7 +58,10 @@ function CommentSection({ fetchComments }) {
         </button>
       </form>
     </div>
+    </div>
   );
 }
 
 export default CommentSection;
+
+

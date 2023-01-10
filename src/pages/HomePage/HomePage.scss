@@ -1,87 +1,127 @@
 @use "../../styles/mixins" as *;
 @use "../../styles//colors" as *;
+@use "../../styles/responsive" as *;
 
-
-.dashboard{
+.dashboard {
   color: $not-admin;
 }
 
-.dashboard__logout{
-    margin-top: 1rem;
-    font-size: .6875rem;
-    cursor: pointer;
-    transition: background-color 0.15s;
-    position: absolute;
-    right: 1.375rem;
-    top: 0;
-    padding: .5rem .6875rem;
-    text-decoration: none;
-    background-color: $black;
-    color: $white;
-    font-weight: 600;
-    border: none;
+.dashboard__logout {
+  color: black;
+  margin-top: 1rem;
+  font-size: 0.6875rem;
+  cursor: pointer;
+  transition: background-color 0.15s;
+  position: absolute;
+  right: 1.375rem;
+  top: 0;
+  padding: 0.5rem 0.6875rem;
+  text-decoration: none;
+  box-shadow: 3px 3px 0 $black;
+  font-weight: 600;
+  border: none;
 
-    &:before {
-      content: "";
-      background: linear-gradient(
-        45deg,
-       $white, $black, $yellow
-      );
-      position: absolute;
-      top: -0.125rem;
-      left: -0.125rem;
-      background-size: 400%;
-      z-index: -1;
-      filter: blur(5px);
-      width: calc(100% + 4px);
-      height: calc(100% + 4px);
-      animation: glowing 20s linear infinite;
-      opacity: 0;
-      transition: opacity 0.3s ease-in-out;
-    }
-
-    &:active {
-      color: $black;
-    }
-
-    &:active:after {
-      
-      background: transparent;
-    }
-
-    &:hover:before {
-      opacity: 1;
-    }
-
-    &:after {
-      z-index: -1;
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: $black;
-      left: 0;
-      top: 0;
-  
-    }
-    @keyframes glowing {
-      0% { background-position: 0 0; }
-      50% { background-position: 400% 0; }
-      100% { background-position: 0 0; }
+  @include desktop {
+    margin-top: 10px;
+    font-size: 17px;
   }
-}  
 
-.home{
-  padding: 1.25rem 0 1.25rem 4.25rem;
+  &:before {
+    content: "";
+    background: linear-gradient(45deg, $white, $black, $yellow);
+    position: absolute;
+    top: -0.125rem;
+    left: -0.125rem;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
 
-  &__span-home{
-    color:$yellow;
+  &:active {
+    color: $black;
+  }
+
+  &:active:after {
+    background: transparent;
+  }
+
+  &:hover:before {
+    opacity: 1;
+  }
+
+  &:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: $black;
+    left: 0;
+    top: 0;
+  }
+  @keyframes glowing {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
   }
 }
 
+.home {
+  padding: 1.25rem 0 1.25rem 1.25rem;
+  margin: auto;
+  width: 235px;
 
+  @include tablet {
+    width: 391px;
+    font-size: 32px;
+    text-align: center;
+  }
 
+  @include desktop {
+    width: 490px;
+    font-size: 55px;
+  }
 
+  &__span-home {
+    color: #c3fd60;
+  }
+}
 
+.homepage-toggle {
+  position: absolute;
+  top: 15px;
+  right: 90px;
 
+  @include tablet {
+    top: 15px;
+    right: 90px;
+  }
 
+  @include desktop {
+    top: 12px;
+    right: 130px;
+  }
+}
+
+.toggle-homepage-img {
+  width: 32px;
+
+  @include tablet {
+    width: 37px;
+  }
+
+  @include desktop {
+    width: 42px;
+  }
+}

@@ -2,10 +2,11 @@ import "./PlayerDetails.scss";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
-import closeIcon from "../../assets/icons/close.svg";
+import light from "../../assets/icons/light.svg";
+import dark from "../../assets/icons/dark.svg";
+import HomeNav from "../../components/HomeNav/HomeNav"
 
-function PlayerDetails({ players }) {
+function PlayerDetails({ players, toggleTheme, theme }) {
   const { playerId } = useParams();
 
   const [singlePlayer, setSinglePlayer] = useState({
@@ -31,16 +32,20 @@ function PlayerDetails({ players }) {
   }, [players, playerId]);
 
   return (
-    <section className="single-player">
-      <div>
-        <Link className="single-player__home-link" to="/homepage">
-          <img
-            className="single-player__close-icon"
-            src={closeIcon}
-            alt={closeIcon}
-          />
-        </Link>
+    <section>
+      
+      <div className="player-details-toggle" onClick={toggleTheme}>
+        {" "}
+        {theme === "light" ? (
+          <img className="toggle-player-details-img" src={light} alt="dark icon" />
+        ) : (
+          <img className="toggle-player-details-img" src={dark} alt="light icon" />
+        )}
       </div>
+      <HomeNav/>
+      <div
+        className={theme === "dark" ? "dark-player-details" : "light-player-details"}
+      >
       <h2 className="single-player__heading">
         {singlePlayer.first_name}
         <br></br>{" "}
@@ -81,6 +86,7 @@ function PlayerDetails({ players }) {
       </div>
 
       <p className="single-player__description">{singlePlayer.description}</p>
+      </div>
     </section>
   );
 }

@@ -3,63 +3,31 @@
 @use "../../styles/mixins" as *;
 @use "../../styles/fonts" as *;
 
-.login__main-button{
-    margin-top: 1rem;
-    font-size: inherit;
-    cursor: pointer;
-    transition: background-color 0.15s;
-    position: absolute;
+.login__main-button {
+  color: white;
+  border: 2px solid #9df803;
+  margin-top: 17px;
+  transition: background-color 0.15s;
+  position: absolute;
+  right: 1.8125rem;
+  font-weight: 600;
+  padding: 4px 5px;
+
+  &:hover,
+  &:focus {
+    background-color: #333;
+    transform: skew(10deg, 0);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border: none;
+  }
+
+  @include tablet {
+    margin-top: 16px;
+    padding: 7px 19px;
     right: 3.8125rem;
-    padding: .3125rem 1rem;
-    text-decoration: none;
-    border: 1px solid $yellow;
-    background-color:$login-button;
-    color: $yellow;
-    font-weight: 600;
-
-    &:before {
-      content: "";
-      position: absolute;
-      top: -0.125rem;
-      left: -0.125rem;
-      background-size: 400%;
-      z-index: -1;
-      filter: blur(.3125rem);
-      width: calc(100% + .25rem);
-      height: calc(100% + .25rem);
-      animation: glowing 20s linear infinite;
-      opacity: 5%;
-      transition: opacity 0.3s ease-in-out;
-    }
-
-    &:active {
-      color: $black;
-    }
-
-    &:active:after {
-      background: transparent;
-    }
-
-    &:hover:before {
-      opacity: 1;
-    }
-
-    &:after {
-      z-index: -1;
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: $black;
-      left: 0;
-      top: 0;
-  
-    }
-    @keyframes glowing {
-      0% { background-position: 0 0; }
-      50% { background-position: 400% 0; }
-      100% { background-position: 0 0; }
-  }
-   
   }
 
+  @include desktop {
+    right: 85px;
+  }
+}

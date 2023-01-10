@@ -4,11 +4,11 @@
 @use "../../styles/fonts" as *;
 
 .player-card {
-  background-image: url("../../assets/images/capstone-background.png");
-  background-repeat: repeat;
-  background-position: center;
-  background-size: contain;
-  height: 100%;
+  // background-image: url("../../assets/images/capstone-background.png");
+  // background-repeat: repeat;
+  // background-position: center;
+  // background-size: contain;
+  // height: 100%;
  
   &__file {
     display: flex;
@@ -18,6 +18,11 @@
     margin: auto;
     gap: -0.25rem;
     padding-top: 0.625rem;
+
+    @include desktop{
+      padding: 0.625rem 0 40px;
+      gap: 18px;
+    }
   }
 
   &__container {
@@ -34,11 +39,9 @@
 
   &__image {
     width: 80%;
-    aspect-ratio: 3/2;
-    object-fit: contain;
     box-shadow: 0px 1px 5px $box-shadow;
-    border-radius: 3%;
-
+    border-radius: 50%;
+    background-color: black;
     transition: background-color 0.3s ease;
      &:hover{
       background-color: $playerCard-hover;
@@ -46,7 +49,7 @@
   }
 
   &__info {
-    color: $black;
+    // color: $black;
     margin: .3125rem 0 1rem;
     display: flex;
     justify-content: center;

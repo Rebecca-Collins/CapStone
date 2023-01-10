@@ -3,18 +3,57 @@
 @use "../../styles/mixins" as *;
 @use "../../styles/fonts" as *;
 
-.admin {
-  background-color: $yellow;
-  
-  &__welcome {
-    height: 4.125rem;
-    color: $white;
-    padding-top: 1.25rem;
-    max-width: 33.125rem;
-    margin: auto;
-    text-align: center;
+.admin-toggle{
+  position: absolute;
+  top: 15px;
+  right: 19px;
+
+  @include tablet {
+      top: 15px;
+      right: 21px;
   }
 
+  @include desktop{
+    top: 12px;
+    right: 36px;
+  }
+}
+
+.toggle-admin-img{
+  width: 32px;
+
+  @include tablet{
+      width: 37px
+  }
+
+  @include desktop {
+    width: 42px;
+  }
+}
+
+.dark-admin{
+  background-color: #000000e8;
+  color: white;
+  padding-top: 0.9375rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  overflow: scroll;
+}
+.light-admin{
+  background-color: rgb(22 169 205);
+  color: white;
+  overflow: scroll;
+  padding-top: 0.9375rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.admin {
+  
   &__text-message {
     color: $not-admin;
   }
@@ -38,47 +77,15 @@
     
   }
 
-  &__container {
-    background-color: $login-message-background;
-    padding-top: 0.9375rem;
-  }
+  // &__container {
+  //   background-color: $white;
+  //   padding-top: 0.9375rem;
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: center;
+  //   height: 100vh;
+  // }
 
-  &__players{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border: 1px solid $black;
-    max-width: 33.125rem;
-    margin: auto;
-    padding: 0.75rem;
-    align-items: center;
-
-    @include tablet {
-      padding: 0.875rem;
-    }
-  }
-
-  &__info {
-    color: $black;
-    display: flex;
-    gap: 0.625rem;
-  }
-
-  &__color {
-    color: $yellow;
-  }
-
-  &__color-admin{
-    color: $white;
-  }
-
-  &__delete-container {
-    display: flex;
-    gap: 0.9375rem;
-  }
-
-  &__delete-text {
-    color: $black;
-    font-size: .75rem;
-  }
+ 
+ 
 }
