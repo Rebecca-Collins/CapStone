@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import player from "../../assets/images/colorWomen.jpg";
+
 import LoginButton from "../../components/LoginButton/LoginButton";
 
 
@@ -8,11 +8,6 @@ import "./Main.scss";
 function Main() {
   return (
     <div className="background">
-      {/* <img 
-        className="main__image-icon"
-        src={player}
-        alt={"A player on the team"}
-      /> */}
       <div className="main">
         <div className="main__container">
           <Link to="/signup" className="main__signup-btn">

@@ -5,13 +5,15 @@
 .dark-background-login{
     box-shadow: 0 0px 4px #ffffff;
     border-radius: 0.5rem;
-    background-color: #00396b
+    background-color: #00396b;
+    color: #9DF803;
 }
 
 .light-background-login{
     box-shadow: 0 0px 4px #000000;
     border-radius: 0.5rem;
     background-color:  white;
+    color: rgb(22 169 205);
 
 }
 
@@ -67,7 +69,7 @@
 
     &__title {
      @include form-title;
-     color: rgb(45 169 230 / 93%);
+    //  color: rgb(45 169 230 / 93%);
      width: 32%;
     }
 
@@ -94,9 +96,24 @@
     }
 
     &__message {
-        border-left: 5px solid $login-message-background;
+        border-left: 4px solid transparent;
+        border-image: linear-gradient(
+          180deg,
+          #ff6663,
+          #feb144,
+          #fdfd97,
+          #9ee09e,
+          #9ec1cf,
+          #002bff63,
+          #cc99c9,
+          #e171c8,
+          #ff6663
+        );
+        border-image-slice: 1;
+        // border-left: 5px solid #c3fd60;
         padding: 0.75rem;
         margin-top: 2rem;
+        // color: rgb(22 169 205);
     }
 
     &__under-box-message{
