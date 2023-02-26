@@ -7,12 +7,9 @@ function HomeNav({theme}) {
       <input type="checkbox" id="nav-control" className="nav-control" />
       <label htmlFor="nav-control" className="home-nav__toggle">
         <div className="controller">
-          {/* <div className="slide"></div> */}
           <div className="slide"></div>
         </div>
       </label>
-
-      
 
       <nav className="navigation">
         <h1><Link className="navigation-link" to="/homepage">Home</Link></h1>
