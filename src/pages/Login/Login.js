@@ -14,7 +14,7 @@ function Login({ toggleTheme, theme }) {
     event.preventDefault();
 
     axios
-      .post("http://localhost:2020/users/login", {
+      .post("http://localhost:8080/users/login", {
         email: event.target.email.value,
         password: event.target.password.value,
       })
@@ -51,9 +51,9 @@ function Login({ toggleTheme, theme }) {
           {error && <div className="login__message">Failed to login</div>}
         </form>
       </div>
-      <p className="login__under-box-message">
+      <p className={theme === "dark" ? "dark-login__under-box-message" : "light-login__under-box-message"}>
         Need an account?{" "}
-        <Link className="login__link" to="/signup">
+        <Link className={theme === "dark" ? "dark-login__link" : "light-login__link"} to="/signup">
           Sign up
         </Link>
       </p>

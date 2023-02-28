@@ -48,7 +48,7 @@ function AddPlayer({toggleTheme, theme}) {
 
     // formData.set('')
     axios
-      .post("http://localhost:2020/players", formData, {
+      .post("http://localhost:8080/players", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

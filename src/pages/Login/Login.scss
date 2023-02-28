@@ -6,17 +6,33 @@
     box-shadow: 0 0px 4px #ffffff;
     border-radius: 0.5rem;
     background-color: #00396b;
-    color: #9DF803;
+    color: yellow;
+    // color: #9DF803;
 }
 
 .light-background-login{
     box-shadow: 0 0px 4px #000000;
     border-radius: 0.5rem;
     background-color:  white;
-    color: rgb(22 169 205);
-
+    color: #2d30f2;
+    // color: rgb(22 169 205);
 }
 
+.dark-login__under-box-message{
+    color: white;
+}
+
+.light-login__under-box-message{
+    color: #2d30f2;
+}
+
+.dark-login__link{
+    color: yellow;
+}
+
+.light-login__link{
+    color: black;
+}
 .login-page {
     // background-color: $login-background;
     min-height: 100vh;
@@ -114,15 +130,5 @@
         padding: 0.75rem;
         margin-top: 2rem;
         // color: rgb(22 169 205);
-    }
-
-    &__under-box-message{
-        color: white;
-    }
-
-    &__link{
-        // text-decoration: none;
-        color: #9DF803;
-        
     }
 }

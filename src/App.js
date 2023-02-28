@@ -23,7 +23,7 @@ function App() {
   const [players, setPlayers] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:2020/players")
+      .get("http://localhost:8080/players")
       .then((response) => {
         setPlayers(response.data);
       })

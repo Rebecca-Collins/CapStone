@@ -16,7 +16,7 @@ function HomePage({ players, toggleTheme, theme }) {
 
   //  --- GET ALL COMMENTS ----
   const fetchComments = async () => {
-    const response = await axios.get("http://localhost:2020/comments");
+    const response = await axios.get("http://localhost:8080/comments");
     setComments(response.data);
   };
 
@@ -33,7 +33,7 @@ function HomePage({ players, toggleTheme, theme }) {
     }
 
     axios
-      .get("http://localhost:2020/users/current", {
+      .get("http://localhost:8080/users/current", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

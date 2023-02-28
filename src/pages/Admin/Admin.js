@@ -24,7 +24,7 @@ function Admin({ players, toggleTheme, theme }) {
     }
 
     axios
-      .get("http://localhost:2020/users/current", {
+      .get("http://localhost:8080/users/current", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

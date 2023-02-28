@@ -22,7 +22,7 @@ function SignUp({ toggleTheme, theme }) {
     };
 
     axios
-      .post("http://localhost:2020/users/signup", newUser)
+      .post("http://localhost:8080/users/signup", newUser)
       .then(() => {
         setSuccess(true);
         navigate("/login");
@@ -68,8 +68,8 @@ function SignUp({ toggleTheme, theme }) {
           {error && <div className="signup__message">{error}</div>}
         </form>
       </div>
-      <p className="signup__box-message">
-        Have an account? <Link className="signup__link" to="/login">Log in</Link>
+      <p className={theme === "dark" ? "dark-signup__box-message" : "light-signup__box-message"} >
+        Have an account? <Link className={theme === "dark" ? "dark-signup__link" : "light-signup__link"} to="/login">Log in</Link>
       </p>
     </main>
   );

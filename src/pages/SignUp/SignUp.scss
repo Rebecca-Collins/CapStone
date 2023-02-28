@@ -13,14 +13,32 @@
   box-shadow: 0 0px 4px #ffffff;
   border-radius: 0.5rem;
   background-color: #00396b;
-  color: #9DF803;
+  color: yellow;
+  // color: #9DF803;
 }
 
 .light-box-shadow{
   box-shadow: 0 0px 4px #000000;
   border-radius: 0.5rem;
   background-color:  white;
-  color: rgb(22 169 205);
+  color: #2d30f2;
+  // color: rgb(22 169 205);
+}
+
+.dark-signup__link{
+  color: yellow;
+}
+
+.light-signup__link{
+  color: black;
+}
+
+.dark-signup__box-message{
+  color: white;
+}
+
+.light-signup__box-message{
+  color: #2d30f2;
 }
 
 .signup-toggle{
@@ -100,14 +118,6 @@
     padding: 0.75rem;
     margin-top: 2rem;
     // color: rgb(22 169 205);
-  }
-
-  &__box-message{
-    color: white;
-  }
-
-  &__link{
-    color: #9DF803;
   }
 
   &__input {
