@@ -35,7 +35,6 @@ function App() {
   return (
     <BrowserRouter>
       <div className={theme === 'dark' ? 'dark-theme' : 'light-theme'}>
-      {/* <button onClick={toggleTheme}>Toggle theme</button> */}
       <Routes>
         <Route
           path="/"

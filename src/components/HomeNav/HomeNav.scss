@@ -3,145 +3,415 @@
 
 
 .home-nav {
-  height: 5.125rem;
-  background-color: #C3FD60;
+  position: relative;
+  display: flex;
+  background-color: #2d30f2;
+  // justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+
+.home-nav__toggle {
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.controller {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+    width: 27px;
+    margin-left: 12px;
+}
+
+.controller.open .line--1 {
+  transform: rotate(45deg) translate(4px, 4px);
+}
+
+.controller.open .line--2 {
+  opacity: 0;
+}
+
+.controller.open .line--3 {
+  transform: rotate(-45deg) translate(4px, -4px);
+}
+
+.line {
+  width: 100%;
+  height: 3px;
+  background-color: #000;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+.line--1 {
+  transform-origin: left center;
+}
+
+.line--3 {
+  transform-origin: left center;
 }
 
 .navigation {
-  background: rgb(0 0 0 / 93%);
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: -100%;
-  transition: left 0.3s;
-  width: 100%;
-  z-index: 100;
-  
-  h1,
-  h1 .navigation-link {
-    color: white;
-    width: 100%;
-    text-align: center;
-    z-index: 101; 
-  }
-  h1 .navigation-link {
-    display: block;
-    font-size: 1.375rem;
-    margin: 1.25rem 1.25rem 0 0;
-    text-decoration: none;
-    transition: all 0.3s ease;
-   
-      &:hover {
-        background: $menu-hover; 
-    }
-  }
+  top: 60px;
+  left: -300px;
+  width: 300px;
+  height: calc(100vh - 60px);
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
 }
 
-  .home-nav__toggle {
-    display: block;
-    padding: .625rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 101;
-    margin-top: .625rem;
+.navigation.open {
+  left: 0;
+}
 
-    @include desktop {
-      margin: 16px 0 12px 18px;
-      padding: 0;
-    }
+.navigation-link {
+  font-size: 24px;
+  color: #000;
+  text-decoration: none;
+  margin: 10px 0;
+}
+
+// /* Hide the checkbox */
+input[type="checkbox"] {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+// .home-nav {
+//   height: 5.125rem;
+//   background-color: #2d30f2;
+// }
+
+// .navigation {
+//   background: rgb(0 0 0 / 93%);
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   left: -100%;
+//   transition: left 0.3s;
+//   width: 100%;
+//   z-index: 100;
+  
+//   h1,
+//   h1 .navigation-link {
+//     color: white;
+//     width: 100%;
+//     text-align: center;
+//     z-index: 101; 
+//   }
+//   h1 .navigation-link {
+//     display: block;
+//     font-size: 1.375rem;
+//     margin: 1.25rem 1.25rem 0 0;
+//     text-decoration: none;
+//     transition: all 0.3s ease;
    
-    .controller {
-      display: inline-block;
-      height: 1.625rem;
-      padding: 0rem 0rem;
-      cursor: pointer;
-      opacity: 0.97;
-      transition: all 0.3s ease;
+//       &:hover {
+//         background: $menu-hover; 
+//     }
+//   }
+// }
+
+//   .home-nav__toggle {
+//     display: block;
+//     padding: .625rem;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     z-index: 101;
+//     margin-top: .625rem;
+
+//     @include desktop {
+//       margin: 16px 0 12px 18px;
+//       padding: 0;
+//     }
+   
+//     .controller {
+//       display: inline-block;
+//       height: 1.625rem;
+//       padding: 0rem 0rem;
+//       cursor: pointer;
+//       opacity: 0.97;
+//       transition: all 0.3s ease;
       
 
-      span {
-        display: inline-block;
-        text-transform: uppercase;
-        line-height: 1.125rem;
-        font-size: 1.125rem;
-        font-weight: 700;
-        color: $white;
-        margin-left: 0rem;
-        width: 0rem;
-      }
+//       span {
+//         display: inline-block;
+//         text-transform: uppercase;
+//         line-height: 1.125rem;
+//         font-size: 1.125rem;
+//         font-weight: 700;
+//         color: $white;
+//         margin-left: 0rem;
+//         width: 0rem;
+//       }
   
-      .slide {
-        position: relative;
-        top: -0.125rem;
-        width: 1.25rem;
-        height: .25rem;
-        background: $black;
-        display: inline-block;
+//       .slide {
+//         position: relative;
+//         top: -0.125rem;
+//         width: 1.25rem;
+//         height: .25rem;
+//         background: $black;
+//         display: inline-block;
   
-        &:before,
-        &:after {
-          display: block;
-          content: "";
-          height: .25rem;
-          width: 1.25rem;
-          background: $black;
-          position: absolute;
-          z-index: -1;
-          transition: all 0.1s 0.2s ease, transform 0.2s ease;
+//         &:before,
+//         &:after {
+//           display: block;
+//           content: "";
+//           height: .25rem;
+//           width: 1.25rem;
+//           background: $black;
+//           position: absolute;
+//           z-index: -1;
+//           transition: all 0.1s 0.2s ease, transform 0.2s ease;
         
-        }
+//         }
   
-        &:before {
-          top: .5rem;
+//         &:before {
+//           top: .5rem;
           
-        }
+//         }
   
-        &:after {
-          top: -0.5rem;
+//         &:after {
+//           top: -0.5rem;
           
-        }
-      }
-    }
+//         }
+//       }
+//     }
    
-  }
-  .nav-control {
-    position: absolute;
-    left: -624.9375rem;
-    width: 100%;
-    clip: rect(0, 0, 0, 0);
-   
+//   }
+//   .nav-control {
+//     position: absolute;
+//     left: -624.9375rem;
+//     width: 100%;
+//     clip: rect(0, 0, 0, 0);
+//     border-radius: 2px;
   
-    &:checked ~ .navigation {
-      left: 0;
-      opacity: 1;
-      transition: left 0.3s, opacity 0.3s;
+//     &:checked ~ .navigation {
+//       left: 0;
+//       opacity: 1;
+//       transition: left 0.3s, opacity 0.3s;
       
-    }
-    &:checked ~ .home-nav__toggle {
-      .controller {
-        .slide {
-          transition: all 0.1s 0s ease;
-          background: trasparent !important;
-          z-index: 101;
+//     }
+//     &:checked ~ .home-nav__toggle {
+//       .controller {
+//         .slide {
+//           transition: all 0.1s 0s ease;
+//           background: trasparent !important;
+//           z-index: 101;
           
-          &:before,
-          &:after {
-            background: $close;
-            transition: all 0.1s ease, transform 0.1s 0.2s ease;
-            top: 0;
-            width: 1.25rem;
-          }
+          
+//           &:before,
+//           &:after {
+//             background: $close;
+//             transition: all 0.1s ease, transform 0.1s 0.2s ease;
+//             top: 0;
+//             width: 1.25rem;
+            
+//           }
   
-          &:before {
-            transform: rotate3d(0, 0, 1, 45deg);
-          }
+//           &:before {
+//             transform: rotate3d(0, 0, 1, 45deg);
+//           }
   
-          &:after {
-            transform: rotate3d(0, 0, 1, -45deg);
-          }
-        }
-      }
-    }
-  }
+//           &:after {
+//             transform: rotate3d(0, 0, 1, -45deg);
+//           }
+//         }
+//       }
+//     }
+//   }
+
+
+
+
+
+
+
+
+// -----------------------------------------
+
+// .home-nav {
+//   position: relative;
+//   height: 5.125rem;
+//   // height: 3rem;
+//   display: flex;
+//   align-items: center;
+//   background-color: #2d30f2;
+//   padding-left: 29px;
+// }
+
+// .home-nav__toggle {
+//   // border: 2px solid pink;
+//   position: absolute;
+//   top: 50%;
+//   right: 45rem;
+//   transform: translateY(-50%);
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   width: 1.5rem;
+//   height: 1.5rem;
+//   cursor: pointer;
+//   z-index: 999;
+//   // transition: transform 0.3s ease-in-out;
+// }
+
+// .controller{
+//   display: flex;
+//     flex-direction: column;
+//     gap: 5px;
+    
+// }
+
+//   .bar {
+//     width: 100%;
+//     height: 0.25rem;
+//     background-color: #e9ece9;
+//     transition: transform 0.3s ease-in-out;
+
+  
+//     // .bar.active:nth-child(1) {
+//     //   transform: rotate3d(0, 0, 1, 45deg);
+//     //   transform: rotate(45deg) translate(0.25rem, 0.25rem);
+//     // }
+    
+//     // .bar.active:nth-child(2) {
+//     //   transform: scaleX(0);
+//     // }
+    
+//     // .bar.active:nth-child(3) {
+    
+//     //   transform: rotate(-45deg) translate(0.25rem, -0.25rem);
+//     // }
+//   }
+
+
+
+// .navigation {
+//   background: #333;
+//   position: absolute;
+//   top: 3rem;
+//   right: 0;
+//   width: 100%;
+//   height: calc(100% - 3rem);
+//   padding: 2rem;
+//   display: none;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   z-index: 998;
+//   transition: transform 0.3s ease-in-out;
+//   transform: translateX(100%);
+
+
+
+  
+
+//   &.active {
+//     display: flex;
+//     transform: translateX(0);
+//     // transition: all 0.1s 0.2s ease, transform 0.2s ease;
+//     // transition: left 0.3s;
+//     border: 3px solid yellow;
+//   }
+// }
+// .navigation-link {
+//     color: white;
+//     width: 100%;
+//     text-align: center;
+//     font-size: 1.5rem;
+//     margin: 1.5rem 0;
+//     text-decoration: none;
+//     // transition: all 0.3s ease;
+   
+
+//     &:hover {
+//       color: yellow
+//     }
+//   }
+
+
+// /* Hide the checkbox */
+// input[type="checkbox"] {
+//   display: none;
+// }
+
+// // /* Style the hamburger menu icon */
+// // label[for="nav-toggle"] {
+// //   display: block;
+// //   // position: fixed;
+// //   top: 0;
+// //   right: 0;
+// //   padding: 20px;
+// //   font-size: 30px;
+// //   cursor: pointer;
+// //   // z-index: 9999;
+// //   // transform: rotate3d(0, 0, 1, -45deg);
+// // }
+
+
+// /* When the checkbox is checked, move the navigation menu into view */
+// input[type="checkbox"]:checked ~ nav {
+//   left: 0;
+//     top: 0;
+//     position: fixed;
+//     height: 100vh;
+   
+// }
+
+// /* Style the links in the navigation menu */
+// nav a {
+//   display: block;
+//   padding: 20px;
+//   color: #fff;
+//   text-decoration: none;
+// }
+
+// nav a:hover {
+//   background-color: #444;
+// }
+
+
+// .nav-control {
+//   position: absolute;
+//   left: -624.9375rem;
+//   width: 100%;
+//   clip: rect(0, 0, 0, 0);
+ 
+
+//   &:checked ~ .navigation {
+//     left: 0;
+//     opacity: 1;
+//     transition: left 0.3s, opacity 0.3s;
+    
+//   }
+//   &:checked ~ .home-nav__toggle {
+//     .controller {
+//       .bar {
+//         transition: all 0.1s 0s ease;
+//         background: trasparent !important;
+//         z-index: 101;
+//         transform: rotate3d(0, 0, 1, -45deg);
+//       }
+//     }
+//   }
+// }
 

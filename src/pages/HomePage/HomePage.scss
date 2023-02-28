@@ -7,7 +7,7 @@
 }
 
 .dashboard__logout {
-  color: black;
+  color: $login-button;
   margin-top: 1rem;
   font-size: 0.6875rem;
   cursor: pointer;
@@ -17,7 +17,10 @@
   top: 0;
   padding: 0.5rem 0.6875rem;
   text-decoration: none;
-  box-shadow: 3px 3px 0 $black;
+  box-shadow: 0 4px 16px -4px rgb(0 0 0 / 71%),
+  0 1px 4px -1px rgb(0 0 0 / 14%);
+  
+  // box-shadow: 3px 3px 0 $black;
   font-weight: 600;
   border: none;
 
@@ -94,7 +97,8 @@
   }
 
   &__span-home {
-    color: #c3fd60;
+    color: #2d30f2;
+    // color: #c3fd60;
   }
 }
 
@@ -102,6 +106,9 @@
   position: absolute;
   top: 15px;
   right: 90px;
+  z-index: 1;
+  margin-right: 12px;
+  cursor: pointer;
 
   @include tablet {
     top: 15px;
@@ -119,6 +126,7 @@
 
   @include tablet {
     width: 37px;
+    margin-right: 14px;
   }
 
   @include desktop {
