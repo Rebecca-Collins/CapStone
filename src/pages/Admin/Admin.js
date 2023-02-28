@@ -24,7 +24,8 @@ function Admin({ players, toggleTheme, theme }) {
     }
 
     axios
-      .get("http://localhost:8080/users/current", {
+      .get("https://oceanside-united.fly.dev/users/current", {
+      // .get("http://localhost:8080/users/current", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

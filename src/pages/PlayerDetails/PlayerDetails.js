@@ -22,7 +22,8 @@ function PlayerDetails({ players, toggleTheme, theme }) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/players/${playerId}`)
+      .get(`https://oceanside-united.fly.dev/players/${playerId}`)
+      // .get(`http://localhost:8080/players/${playerId}`)
       .then((response) => {
         setSinglePlayer(response.data);
       })

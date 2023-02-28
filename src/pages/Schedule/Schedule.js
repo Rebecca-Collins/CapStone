@@ -10,7 +10,8 @@ function Schedule({theme, toggleTheme}) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/schedule")
+      .get("https://oceanside-united.fly.dev/schedule")
+      // .get("http://localhost:8080/schedule")
       .then((response) => {
         setSchedule(response.data);
         console.log("IS THIS WORKING", response.data);

@@ -16,7 +16,8 @@ function HomePage({ players, toggleTheme, theme }) {
 
   //  --- GET ALL COMMENTS ----
   const fetchComments = async () => {
-    const response = await axios.get("http://localhost:8080/comments");
+    const response = await axios.get("https://oceanside-united.fly.dev/comments");
+    // const response = await axios.get("http://localhost:8080/comments");
     setComments(response.data);
   };
 
@@ -33,7 +34,8 @@ function HomePage({ players, toggleTheme, theme }) {
     }
 
     axios
-      .get("http://localhost:8080/users/current", {
+      .get("https://oceanside-united.fly.dev/users/current", {
+      // .get("http://localhost:8080/users/current", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
