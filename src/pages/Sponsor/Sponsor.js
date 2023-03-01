@@ -7,7 +7,7 @@ import HomeNav from "../../components/HomeNav/HomeNav";
 function Sponsor({toggleTheme, theme}) {
 
   const handleClick = () => {
-    window.open('https://fernandcedar.ca/');
+    window.open('http://fernandcedar.ca/');
   };
 
 

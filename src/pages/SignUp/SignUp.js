@@ -22,7 +22,7 @@ function SignUp({ toggleTheme, theme }) {
     };
 
     axios
-      .post("https://oceanside-united.fly.dev/users/signup", newUser)
+      .post("http://oceanside-united.fly.dev/users/signup", newUser)
       // .post("http://localhost:8080/users/signup", newUser)
       .then(() => {
         setSuccess(true);

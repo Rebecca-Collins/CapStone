@@ -48,7 +48,7 @@ function AddPlayer({toggleTheme, theme}) {
 
     // formData.set('')
     axios
-      .post("https://oceanside-united.fly.dev/players", formData, {
+      .post("http://oceanside-united.fly.dev/players", formData, {
       // .post("http://localhost:8080/players", formData, {
         headers: {
           "Content-Type": "multipart/form-data",

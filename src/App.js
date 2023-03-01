@@ -23,7 +23,7 @@ function App() {
   const [players, setPlayers] = useState([]);
   useEffect(() => {
     axios
-      .get("https://oceanside-united.fly.dev/players")
+      .get("http://oceanside-united.fly.dev/players")
       // .get("http://localhost:8080/players")
       .then((response) => {
         setPlayers(response.data);

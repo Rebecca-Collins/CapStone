@@ -13,7 +13,7 @@ function CommentSection({ fetchComments, theme }) {
 
     const requestBody = { first_name, content };
     axios
-      .post("https://oceanside-united.fly.dev/comments/newcomment", requestBody)
+      .post("http://oceanside-united.fly.dev/comments/newcomment", requestBody)
       // .post("http://localhost:8080/comments/newcomment", requestBody)
       .then(async () => {
         try {
