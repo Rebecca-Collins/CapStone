@@ -48,7 +48,7 @@ function AddPlayer({toggleTheme, theme}) {
 
     // formData.set('')
     axios
-      .post("https://oceanside-united.herokuapp.com/players", formData, {
+      .post("http://oceanside-united.herokuapp.com/players", formData, {
       // .post("http://localhost:8080/players", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
