@@ -15,7 +15,7 @@ function DeletePlayer({ players, theme }) {
   const [deletedPlayers, setDeletedPlayers] = useState([]);
   const handleDelete = (player) => {
     axios
-      .delete("http://oceanside-united.fly.dev/players/" + player.id)
+      .delete("https://oceanside-united.herokuapp.com/players/" + player.id)
       // .delete("http://localhost:8080/players/" + player.id)
       .then((response) => {
         const updatedDeletedPlayers = [...deletedPlayers, player.id];

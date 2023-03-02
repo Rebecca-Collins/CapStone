@@ -8,7 +8,7 @@ function DeleteComment({ comments, onDelete }) {
         onDelete(comments);
       if (window.confirm("Are you sure you want to delete this comment?")) {
         axios
-          .delete("http://oceanside-united.fly.dev/comments/" + comments.id)
+          .delete("https://oceanside-united.herokuapp.com/comments/" + comments.id)
           // .delete("http://localhost:8080/comments/" + comments.id)
           .then((response) => {
             onDelete(comments);

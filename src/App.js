@@ -23,7 +23,7 @@ function App() {
   const [players, setPlayers] = useState([]);
   useEffect(() => {
     axios
-      .get("http://oceanside-united.fly.dev/players")
+      .get("https://oceanside-united.herokuapp.com/players")
       // .get("http://localhost:8080/players")
       .then((response) => {
         setPlayers(response.data);
