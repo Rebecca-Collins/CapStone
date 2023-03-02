@@ -24,7 +24,7 @@ function Login({ toggleTheme, theme }) {
         navigate("/homePage");
       })
       .catch((error) => {
-        console.log(error);
+        console.log("HELLO",error);
         setError(true);
       });
   };
