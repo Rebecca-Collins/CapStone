@@ -10,7 +10,7 @@ function Schedule({theme, toggleTheme}) {
 
   useEffect(() => {
     axios
-      .get("http://oceanside-united.herokuapp.com/schedule")
+      .get("https://oceanside-united.herokuapp.com/schedule")
       // .get("http://localhost:8080/schedule")
       .then((response) => {
         setSchedule(response.data);

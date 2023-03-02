@@ -22,7 +22,7 @@ function SignUp({ toggleTheme, theme }) {
     };
 
     axios
-      .post("http://oceanside-united.herokuapp.com/users/signup", newUser)
+      .post("https://oceanside-united.herokuapp.com/users/signup", newUser)
       // .post("http://localhost:8080/users/signup", newUser)
       .then(() => {
         setSuccess(true);

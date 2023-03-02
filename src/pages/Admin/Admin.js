@@ -24,7 +24,7 @@ function Admin({ players, toggleTheme, theme }) {
     }
 
     axios
-      .get("http://oceanside-united.herokuapp.com/users/current", {
+      .get("https://oceanside-united.herokuapp.com/users/current", {
       // .get("http://localhost:8080/users/current", {
         headers: {
           Authorization: `Bearer ${token}`,

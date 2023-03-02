@@ -13,7 +13,7 @@ function CommentSection({ fetchComments, theme }) {
 
     const requestBody = { first_name, content };
     axios
-      .post("http://oceanside-united.herokuapp.com/comments/newcomment", requestBody)
+      .post("https://oceanside-united.herokuapp.com/comments/newcomment", requestBody)
       // .post("http://localhost:8080/comments/newcomment", requestBody)
       .then(async () => {
         try {
